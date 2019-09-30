@@ -1,0 +1,70 @@
+---
+title: "Week One Notes"
+author: "Anthony Luna"
+date: "9/30/2019"
+output: html_document
+---
+
+# Grade Breakdown
+
+R quizzes are assignments in class, being able to execute and turn in.
+
+# What is data science?
+
+* Hadley - "The process of turning data into understanding"
+* Priority is in how it is communicated (the data)
+
+Enviro Data>import>TIDY (wrangle)> Transform-visualize-model >Communicate
+
+# Computational Reproducibility
+
+Reproducability is a really huge concern in science. 
+
+* Types of reproducibility
+  * Coputational reproducibility: Click button pipeline for reproduction of source code and data
+  Statistical reproducibility: Don't P-Hack!
+* Do your data science like every analysis needs an ALIBI!
+
+# The Workflow we'll grow
+
+Overarching theme is to make everything easy to understand with Rmarkdown, Scripts. Also to BACK UP EVERYTHING (with version control).
+* Raw Data
+  * Keep it raw & make a copy!
+* ORGANIZED ANNOTATDE WRANGLING
+  * Annotation are useul for reproductibility
+* Clear & open analysis
+  * Always write publishable code! Be proud of your organization. Its like your room....
+  * Open science... Sharing what you can, when it makes sense FOR YOU.
+  * Where modeling/stats/visualizations
+* Create Fully Reproducible graphs, tables & reports!
+
+"We will do everything in a well-annotated, organized scripts that contain streamlined and easy-to-follow records for our entire analyses from raw data through final reports, with unbreakable file paths and with a complete history of changes made.
+
+R+Rstudio<>git<>GitHub
+
+# Tidy data structure
+
+Tidyverse is the package at the middle of all of this...
+
+"The tidyverse is a coherent system of packages for data manipulations, exploration and visualization that share a common design philosophy"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
