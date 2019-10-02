@@ -4,6 +4,7 @@ author: "Anthony Luna"
 date: "9/30/2019"
 output: html_document
 ---
+# Lecture 1
 
 # Grade Breakdown
 
@@ -48,7 +49,49 @@ Tidyverse is the package at the middle of all of this...
 
 "The tidyverse is a coherent system of packages for data manipulations, exploration and visualization that share a common design philosophy"
 
+# Lecture 2
 
+2 Papers, 1 Assignment
+
+## Naming Object & Entering Data
+
+object <- {assignment operator} data_frame %>% function(arg1,arg2,...)
+
+1. Meaningful
+  - If no data dictionary, I should be able to read the script pretty easily
+  - Should not need to be reminding yourself what it is
+2. Consistent
+3. Concise
+4. Code & coder friendly
+
+Most of this is common sense. Here is some more:
+
+* Avoid object names that are common/used function names
+* Make a name uniquely searchable 
+* Object names nouns, function names verbs
+* Nameing isn't the end of the world but it will save you time in the long run.
+
+
+## Entering Things
+
+* Quantitative Data: continuous or discrete numbers
+* Nominal Data: synonamous with Categorical data
+* Date/times
+  * Uses ISO 8601 standard, meaning: 
+    * Dates-'yyyy-mm-dd'
+    * Times-'hh:mm:ss.ffff'
+    * Datetime-'yyyy-mm-ddThh:mm:ss.ffff'
+
+* outcomes for a vairable ONLY. Where do the Units go? In the name, the metadata, or a new column if the row level data has differing units
+* Exact same value for missing value
+
+## Keep a data dictionary
+
+* Plan on forgetting things
+* Link to original data sets and data dictionaries
+
+rseek.org
+rdocumentation.org
 
 
 
