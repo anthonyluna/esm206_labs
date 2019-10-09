@@ -1,0 +1,1981 @@
+country,year,volume
+Chile,1989,29
+Chile,1990,9996
+Chile,1991,14037
+Chile,1992,23164
+Chile,1993,28810
+Chile,1994,24473
+Chile,1995,47146
+Chile,1996,63706
+Chile,1997,74296
+Chile,1998,99611
+Chile,1999,92344
+Chile,2000,139290
+Chile,2001,186729
+Chile,2002,218633
+Chile,2003,237976
+Chile,2004,238138
+Chile,2005,243848
+Chile,2006,223049
+Chile,2007,230852
+Chile,2008,212759
+Chile,2009,128229
+Chile,2010,61416
+Chile,2011,120387
+Chile,2012,206177
+Chile,2013,239624
+Chile,2014,279026
+Chile,2015,284643
+Chile,2016,279459
+Chile,2017,297793
+Chile,2018,353571
+Canada,1989,29
+Canada,1990,10174
+Canada,1991,18777
+Canada,1992,23051
+Canada,1993,31322
+Canada,1994,41760
+Canada,1995,49687
+Canada,1996,52929
+Canada,1997,79061
+Canada,1998,90616
+Canada,1999,98148
+Canada,2000,106758
+Canada,2001,138030
+Canada,2002,161095
+Canada,2003,119089
+Canada,2004,115650
+Canada,2005,148197
+Canada,2006,165642
+Canada,2007,155452
+Canada,2008,166657
+Canada,2009,157620
+Canada,2010,168766
+Canada,2011,156511
+Canada,2012,193026
+Canada,2013,148547
+Canada,2014,104520
+Canada,2015,177550
+Canada,2016,189077
+Canada,2017,172937
+Canada,2018,170701
+Norway,1989,3400
+Norway,1990,15872
+Norway,1991,1502
+Norway,1992,1131
+Norway,1993,4081
+Norway,1994,3485
+Norway,1995,5049
+Norway,1996,4348
+Norway,1997,3815
+Norway,1998,6761
+Norway,1999,20871
+Norway,2000,18243
+Norway,2001,14761
+Norway,2002,16057
+Norway,2003,19094
+Norway,2004,11963
+Norway,2005,10648
+Norway,2006,15923
+Norway,2007,22501
+Norway,2008,14402
+Norway,2009,60213
+Norway,2010,80643
+Norway,2011,41557
+Norway,2012,31782
+Norway,2013,40591
+Norway,2014,57896
+Norway,2015,82114
+Norway,2016,82589
+Norway,2017,107224
+Norway,2018,119493
+United Kingdom,1989,9
+United Kingdom,1990,1533
+United Kingdom,1991,2611
+United Kingdom,1992,704
+United Kingdom,1993,525
+United Kingdom,1994,1313
+United Kingdom,1995,1804
+United Kingdom,1996,2985
+United Kingdom,1997,3091
+United Kingdom,1998,6702
+United Kingdom,1999,16647
+United Kingdom,2000,14680
+United Kingdom,2001,13842
+United Kingdom,2002,13335
+United Kingdom,2003,27695
+United Kingdom,2004,20018
+United Kingdom,2005,10786
+United Kingdom,2006,17285
+United Kingdom,2007,25742
+United Kingdom,2008,23376
+United Kingdom,2009,37253
+United Kingdom,2010,34312
+United Kingdom,2011,34970
+United Kingdom,2012,29727
+United Kingdom,2013,27594
+United Kingdom,2014,34070
+United Kingdom,2015,27232
+United Kingdom,2016,20502
+United Kingdom,2017,32067
+United Kingdom,2018,29129
+Faroe Islands,1989,778
+Faroe Islands,1990,1199
+Faroe Islands,1991,2854
+Faroe Islands,1992,3427
+Faroe Islands,1993,1566
+Faroe Islands,1994,440
+Faroe Islands,1995,44
+Faroe Islands,1996,807
+Faroe Islands,1997,2026
+Faroe Islands,1998,850
+Faroe Islands,1999,3842
+Faroe Islands,2000,5931
+Faroe Islands,2001,1828
+Faroe Islands,2002,1836
+Faroe Islands,2003,4905
+Faroe Islands,2004,1952
+Faroe Islands,2005,1262
+Faroe Islands,2006,460
+Faroe Islands,2007,3082
+Faroe Islands,2008,6540
+Faroe Islands,2009,23117
+Faroe Islands,2010,20886
+Faroe Islands,2011,32926
+Faroe Islands,2012,25981
+Faroe Islands,2013,33127
+Faroe Islands,2014,35606
+Faroe Islands,2015,27215
+Faroe Islands,2016,30949
+Faroe Islands,2017,27906
+Faroe Islands,2018,23961
+China (Mainland),1989,NA
+China (Mainland),1990,1
+China (Mainland),1991,NA
+China (Mainland),1992,NA
+China (Mainland),1993,NA
+China (Mainland),1994,NA
+China (Mainland),1995,53
+China (Mainland),1996,NA
+China (Mainland),1997,24
+China (Mainland),1998,171
+China (Mainland),1999,141
+China (Mainland),2000,140
+China (Mainland),2001,38
+China (Mainland),2002,171
+China (Mainland),2003,1560
+China (Mainland),2004,2656
+China (Mainland),2005,5484
+China (Mainland),2006,10049
+China (Mainland),2007,10544
+China (Mainland),2008,13530
+China (Mainland),2009,14290
+China (Mainland),2010,14447
+China (Mainland),2011,9631
+China (Mainland),2012,12379
+China (Mainland),2013,17785
+China (Mainland),2014,17046
+China (Mainland),2015,2148
+China (Mainland),2016,412
+China (Mainland),2017,1730
+China (Mainland),2018,1561
+Iceland,1989,215
+Iceland,1990,2343
+Iceland,1991,1513
+Iceland,1992,932
+Iceland,1993,1032
+Iceland,1994,1188
+Iceland,1995,771
+Iceland,1996,1515
+Iceland,1997,1264
+Iceland,1998,3026
+Iceland,1999,8027
+Iceland,2000,3006
+Iceland,2001,2068
+Iceland,2002,1091
+Iceland,2003,2558
+Iceland,2004,2688
+Iceland,2005,1265
+Iceland,2006,1455
+Iceland,2007,987
+Iceland,2008,449
+Iceland,2009,176
+Iceland,2010,603
+Iceland,2011,838
+Iceland,2012,2684
+Iceland,2013,2371
+Iceland,2014,3438
+Iceland,2015,3177
+Iceland,2016,3229
+Iceland,2017,3000
+Iceland,2018,3461
+"Germany, Fed. Republic",1989,NA
+"Germany, Fed. Republic",1990,53
+"Germany, Fed. Republic",1991,NA
+"Germany, Fed. Republic",1992,NA
+"Germany, Fed. Republic",1993,NA
+"Germany, Fed. Republic",1994,40
+"Germany, Fed. Republic",1995,45
+"Germany, Fed. Republic",1996,NA
+"Germany, Fed. Republic",1997,NA
+"Germany, Fed. Republic",1998,NA
+"Germany, Fed. Republic",1999,53
+"Germany, Fed. Republic",2000,NA
+"Germany, Fed. Republic",2001,NA
+"Germany, Fed. Republic",2002,41
+"Germany, Fed. Republic",2003,NA
+"Germany, Fed. Republic",2004,40
+"Germany, Fed. Republic",2005,NA
+"Germany, Fed. Republic",2006,NA
+"Germany, Fed. Republic",2007,NA
+"Germany, Fed. Republic",2008,NA
+"Germany, Fed. Republic",2009,1
+"Germany, Fed. Republic",2010,NA
+"Germany, Fed. Republic",2011,NA
+"Germany, Fed. Republic",2012,NA
+"Germany, Fed. Republic",2013,NA
+"Germany, Fed. Republic",2014,3707
+"Germany, Fed. Republic",2015,8404
+"Germany, Fed. Republic",2016,10243
+"Germany, Fed. Republic",2017,11606
+"Germany, Fed. Republic",2018,10733
+Denmark,1989,NA
+Denmark,1990,277
+Denmark,1991,639
+Denmark,1992,269
+Denmark,1993,1345
+Denmark,1994,920
+Denmark,1995,830
+Denmark,1996,279
+Denmark,1997,568
+Denmark,1998,1025
+Denmark,1999,1462
+Denmark,2000,778
+Denmark,2001,839
+Denmark,2002,105
+Denmark,2003,174
+Denmark,2004,699
+Denmark,2005,566
+Denmark,2006,93
+Denmark,2007,486
+Denmark,2008,173
+Denmark,2009,1458
+Denmark,2010,3007
+Denmark,2011,895
+Denmark,2012,7
+Denmark,2013,2358
+Denmark,2014,2590
+Denmark,2015,194
+Denmark,2016,537
+Denmark,2017,2054
+Denmark,2018,2164
+Ireland,1989,39
+Ireland,1990,693
+Ireland,1991,719
+Ireland,1992,38
+Ireland,1993,250
+Ireland,1994,9
+Ireland,1995,5
+Ireland,1996,0
+Ireland,1997,6
+Ireland,1998,161
+Ireland,1999,360
+Ireland,2000,264
+Ireland,2001,21
+Ireland,2002,280
+Ireland,2003,983
+Ireland,2004,318
+Ireland,2005,645
+Ireland,2006,772
+Ireland,2007,372
+Ireland,2008,341
+Ireland,2009,770
+Ireland,2010,1596
+Ireland,2011,710
+Ireland,2012,837
+Ireland,2013,862
+Ireland,2014,606
+Ireland,2015,515
+Ireland,2016,603
+Ireland,2017,569
+Ireland,2018,483
+New Zealand,1989,NA
+New Zealand,1990,5
+New Zealand,1991,NA
+New Zealand,1992,18
+New Zealand,1993,2
+New Zealand,1994,8
+New Zealand,1995,32
+New Zealand,1996,197
+New Zealand,1997,14
+New Zealand,1998,17
+New Zealand,1999,NA
+New Zealand,2000,NA
+New Zealand,2001,16
+New Zealand,2002,139
+New Zealand,2003,235
+New Zealand,2004,5
+New Zealand,2005,71
+New Zealand,2006,211
+New Zealand,2007,356
+New Zealand,2008,579
+New Zealand,2009,695
+New Zealand,2010,650
+New Zealand,2011,535
+New Zealand,2012,579
+New Zealand,2013,496
+New Zealand,2014,458
+New Zealand,2015,797
+New Zealand,2016,1067
+New Zealand,2017,1696
+New Zealand,2018,545
+Poland,1989,NA
+Poland,1990,NA
+Poland,1991,NA
+Poland,1992,NA
+Poland,1993,NA
+Poland,1994,33
+Poland,1995,NA
+Poland,1996,NA
+Poland,1997,NA
+Poland,1998,NA
+Poland,1999,25
+Poland,2000,NA
+Poland,2001,NA
+Poland,2002,NA
+Poland,2003,NA
+Poland,2004,NA
+Poland,2005,NA
+Poland,2006,NA
+Poland,2007,NA
+Poland,2008,439
+Poland,2009,2286
+Poland,2010,1153
+Poland,2011,76
+Poland,2012,499
+Poland,2013,480
+Poland,2014,361
+Poland,2015,130
+Poland,2016,239
+Poland,2017,345
+Poland,2018,276
+Netherlands,1989,4
+Netherlands,1990,38
+Netherlands,1991,76
+Netherlands,1992,43
+Netherlands,1993,NA
+Netherlands,1994,1
+Netherlands,1995,40
+Netherlands,1996,161
+Netherlands,1997,69
+Netherlands,1998,133
+Netherlands,1999,95
+Netherlands,2000,37
+Netherlands,2001,5
+Netherlands,2002,16
+Netherlands,2003,49
+Netherlands,2004,7
+Netherlands,2005,NA
+Netherlands,2006,NA
+Netherlands,2007,2
+Netherlands,2008,NA
+Netherlands,2009,NA
+Netherlands,2010,47
+Netherlands,2011,35
+Netherlands,2012,36
+Netherlands,2013,152
+Netherlands,2014,46
+Netherlands,2015,104
+Netherlands,2016,190
+Netherlands,2017,671
+Netherlands,2018,2688
+Australia,1989,NA
+Australia,1990,29
+Australia,1991,51
+Australia,1992,92
+Australia,1993,79
+Australia,1994,248
+Australia,1995,108
+Australia,1996,30
+Australia,1997,NA
+Australia,1998,7
+Australia,1999,15
+Australia,2000,8
+Australia,2001,44
+Australia,2002,64
+Australia,2003,NA
+Australia,2004,3
+Australia,2005,7
+Australia,2006,5
+Australia,2007,47
+Australia,2008,92
+Australia,2009,387
+Australia,2010,102
+Australia,2011,3
+Australia,2012,NA
+Australia,2013,NA
+Australia,2014,NA
+Australia,2015,0
+Australia,2016,NA
+Australia,2017,NA
+Australia,2018,9
+France,1989,NA
+France,1990,NA
+France,1991,4
+France,1992,NA
+France,1993,0
+France,1994,NA
+France,1995,NA
+France,1996,NA
+France,1997,1
+France,1998,NA
+France,1999,NA
+France,2000,NA
+France,2001,NA
+France,2002,NA
+France,2003,NA
+France,2004,NA
+France,2005,NA
+France,2006,1
+France,2007,NA
+France,2008,2
+France,2009,NA
+France,2010,642
+France,2011,222
+France,2012,10
+France,2013,NA
+France,2014,NA
+France,2015,NA
+France,2016,NA
+France,2017,NA
+France,2018,NA
+Argentina,1989,NA
+Argentina,1990,NA
+Argentina,1991,NA
+Argentina,1992,NA
+Argentina,1993,3
+Argentina,1994,NA
+Argentina,1995,1
+Argentina,1996,77
+Argentina,1997,117
+Argentina,1998,NA
+Argentina,1999,NA
+Argentina,2000,10
+Argentina,2001,5
+Argentina,2002,2
+Argentina,2003,NA
+Argentina,2004,5
+Argentina,2005,2
+Argentina,2006,NA
+Argentina,2007,7
+Argentina,2008,53
+Argentina,2009,98
+Argentina,2010,139
+Argentina,2011,NA
+Argentina,2012,NA
+Argentina,2013,NA
+Argentina,2014,NA
+Argentina,2015,NA
+Argentina,2016,NA
+Argentina,2017,NA
+Argentina,2018,NA
+Thailand,1989,NA
+Thailand,1990,NA
+Thailand,1991,5
+Thailand,1992,NA
+Thailand,1993,NA
+Thailand,1994,0
+Thailand,1995,NA
+Thailand,1996,NA
+Thailand,1997,NA
+Thailand,1998,NA
+Thailand,1999,NA
+Thailand,2000,21
+Thailand,2001,NA
+Thailand,2002,NA
+Thailand,2003,NA
+Thailand,2004,49
+Thailand,2005,NA
+Thailand,2006,NA
+Thailand,2007,36
+Thailand,2008,NA
+Thailand,2009,1
+Thailand,2010,114
+Thailand,2011,158
+Thailand,2012,79
+Thailand,2013,NA
+Thailand,2014,NA
+Thailand,2015,NA
+Thailand,2016,NA
+Thailand,2017,NA
+Thailand,2018,NA
+Cayman Islands,1989,NA
+Cayman Islands,1990,NA
+Cayman Islands,1991,NA
+Cayman Islands,1992,NA
+Cayman Islands,1993,NA
+Cayman Islands,1994,NA
+Cayman Islands,1995,NA
+Cayman Islands,1996,NA
+Cayman Islands,1997,410
+Cayman Islands,1998,NA
+Cayman Islands,1999,NA
+Cayman Islands,2000,NA
+Cayman Islands,2001,NA
+Cayman Islands,2002,NA
+Cayman Islands,2003,NA
+Cayman Islands,2004,NA
+Cayman Islands,2005,NA
+Cayman Islands,2006,NA
+Cayman Islands,2007,NA
+Cayman Islands,2008,NA
+Cayman Islands,2009,NA
+Cayman Islands,2010,NA
+Cayman Islands,2011,NA
+Cayman Islands,2012,NA
+Cayman Islands,2013,NA
+Cayman Islands,2014,NA
+Cayman Islands,2015,NA
+Cayman Islands,2016,NA
+Cayman Islands,2017,NA
+Cayman Islands,2018,NA
+Sweden,1989,NA
+Sweden,1990,64
+Sweden,1991,NA
+Sweden,1992,NA
+Sweden,1993,56
+Sweden,1994,20
+Sweden,1995,51
+Sweden,1996,105
+Sweden,1997,NA
+Sweden,1998,NA
+Sweden,1999,NA
+Sweden,2000,NA
+Sweden,2001,NA
+Sweden,2002,NA
+Sweden,2003,NA
+Sweden,2004,NA
+Sweden,2005,NA
+Sweden,2006,NA
+Sweden,2007,NA
+Sweden,2008,NA
+Sweden,2009,40
+Sweden,2010,NA
+Sweden,2011,NA
+Sweden,2012,NA
+Sweden,2013,1
+Sweden,2014,8
+Sweden,2015,NA
+Sweden,2016,NA
+Sweden,2017,2
+Sweden,2018,NA
+Lithuania,1989,NA
+Lithuania,1990,NA
+Lithuania,1991,NA
+Lithuania,1992,NA
+Lithuania,1993,NA
+Lithuania,1994,NA
+Lithuania,1995,NA
+Lithuania,1996,NA
+Lithuania,1997,NA
+Lithuania,1998,NA
+Lithuania,1999,NA
+Lithuania,2000,NA
+Lithuania,2001,NA
+Lithuania,2002,NA
+Lithuania,2003,NA
+Lithuania,2004,NA
+Lithuania,2005,NA
+Lithuania,2006,NA
+Lithuania,2007,NA
+Lithuania,2008,NA
+Lithuania,2009,NA
+Lithuania,2010,279
+Lithuania,2011,NA
+Lithuania,2012,NA
+Lithuania,2013,NA
+Lithuania,2014,NA
+Lithuania,2015,NA
+Lithuania,2016,54
+Lithuania,2017,NA
+Lithuania,2018,NA
+Japan,1989,NA
+Japan,1990,NA
+Japan,1991,NA
+Japan,1992,NA
+Japan,1993,NA
+Japan,1994,NA
+Japan,1995,42
+Japan,1996,NA
+Japan,1997,212
+Japan,1998,26
+Japan,1999,8
+Japan,2000,5
+Japan,2001,1
+Japan,2002,NA
+Japan,2003,NA
+Japan,2004,NA
+Japan,2005,1
+Japan,2006,NA
+Japan,2007,3
+Japan,2008,1
+Japan,2009,1
+Japan,2010,1
+Japan,2011,NA
+Japan,2012,NA
+Japan,2013,NA
+Japan,2014,NA
+Japan,2015,NA
+Japan,2016,NA
+Japan,2017,6
+Japan,2018,1
+Costa Rica,1989,NA
+Costa Rica,1990,NA
+Costa Rica,1991,NA
+Costa Rica,1992,38
+Costa Rica,1993,37
+Costa Rica,1994,3
+Costa Rica,1995,13
+Costa Rica,1996,25
+Costa Rica,1997,2
+Costa Rica,1998,NA
+Costa Rica,1999,6
+Costa Rica,2000,2
+Costa Rica,2001,9
+Costa Rica,2002,6
+Costa Rica,2003,19
+Costa Rica,2004,15
+Costa Rica,2005,NA
+Costa Rica,2006,6
+Costa Rica,2007,2
+Costa Rica,2008,NA
+Costa Rica,2009,2
+Costa Rica,2010,NA
+Costa Rica,2011,12
+Costa Rica,2012,11
+Costa Rica,2013,NA
+Costa Rica,2014,NA
+Costa Rica,2015,8
+Costa Rica,2016,4
+Costa Rica,2017,NA
+Costa Rica,2018,NA
+Ecuador,1989,NA
+Ecuador,1990,NA
+Ecuador,1991,7
+Ecuador,1992,NA
+Ecuador,1993,13
+Ecuador,1994,10
+Ecuador,1995,2
+Ecuador,1996,4
+Ecuador,1997,29
+Ecuador,1998,1
+Ecuador,1999,17
+Ecuador,2000,NA
+Ecuador,2001,NA
+Ecuador,2002,4
+Ecuador,2003,29
+Ecuador,2004,13
+Ecuador,2005,4
+Ecuador,2006,2
+Ecuador,2007,3
+Ecuador,2008,NA
+Ecuador,2009,14
+Ecuador,2010,NA
+Ecuador,2011,12
+Ecuador,2012,13
+Ecuador,2013,18
+Ecuador,2014,NA
+Ecuador,2015,6
+Ecuador,2016,NA
+Ecuador,2017,NA
+Ecuador,2018,NA
+Russia,1989,NA
+Russia,1990,NA
+Russia,1991,NA
+Russia,1992,NA
+Russia,1993,NA
+Russia,1994,NA
+Russia,1995,NA
+Russia,1996,NA
+Russia,1997,NA
+Russia,1998,NA
+Russia,1999,49
+Russia,2000,54
+Russia,2001,NA
+Russia,2002,NA
+Russia,2003,NA
+Russia,2004,NA
+Russia,2005,NA
+Russia,2006,NA
+Russia,2007,NA
+Russia,2008,NA
+Russia,2009,NA
+Russia,2010,30
+Russia,2011,NA
+Russia,2012,NA
+Russia,2013,NA
+Russia,2014,NA
+Russia,2015,NA
+Russia,2016,NA
+Russia,2017,NA
+Russia,2018,NA
+Venezuela,1989,NA
+Venezuela,1990,NA
+Venezuela,1991,NA
+Venezuela,1992,2
+Venezuela,1993,NA
+Venezuela,1994,NA
+Venezuela,1995,NA
+Venezuela,1996,99
+Venezuela,1997,NA
+Venezuela,1998,NA
+Venezuela,1999,NA
+Venezuela,2000,NA
+Venezuela,2001,NA
+Venezuela,2002,NA
+Venezuela,2003,NA
+Venezuela,2004,NA
+Venezuela,2005,NA
+Venezuela,2006,NA
+Venezuela,2007,NA
+Venezuela,2008,NA
+Venezuela,2009,NA
+Venezuela,2010,NA
+Venezuela,2011,NA
+Venezuela,2012,NA
+Venezuela,2013,NA
+Venezuela,2014,NA
+Venezuela,2015,2
+Venezuela,2016,NA
+Venezuela,2017,NA
+Venezuela,2018,NA
+Colombia,1989,NA
+Colombia,1990,NA
+Colombia,1991,10
+Colombia,1992,NA
+Colombia,1993,NA
+Colombia,1994,NA
+Colombia,1995,49
+Colombia,1996,13
+Colombia,1997,12
+Colombia,1998,0
+Colombia,1999,NA
+Colombia,2000,NA
+Colombia,2001,NA
+Colombia,2002,NA
+Colombia,2003,1
+Colombia,2004,NA
+Colombia,2005,NA
+Colombia,2006,1
+Colombia,2007,NA
+Colombia,2008,NA
+Colombia,2009,NA
+Colombia,2010,NA
+Colombia,2011,NA
+Colombia,2012,3
+Colombia,2013,NA
+Colombia,2014,5
+Colombia,2015,NA
+Colombia,2016,NA
+Colombia,2017,NA
+Colombia,2018,1
+Belgium,1989,NA
+Belgium,1990,7
+Belgium,1991,NA
+Belgium,1992,NA
+Belgium,1993,NA
+Belgium,1994,NA
+Belgium,1995,NA
+Belgium,1996,NA
+Belgium,1997,NA
+Belgium,1998,38
+Belgium,1999,41
+Belgium,2000,NA
+Belgium,2001,NA
+Belgium,2002,NA
+Belgium,2003,NA
+Belgium,2004,NA
+Belgium,2005,NA
+Belgium,2006,NA
+Belgium,2007,NA
+Belgium,2008,NA
+Belgium,2009,NA
+Belgium,2010,NA
+Belgium,2011,NA
+Belgium,2012,NA
+Belgium,2013,NA
+Belgium,2014,NA
+Belgium,2015,NA
+Belgium,2016,NA
+Belgium,2017,NA
+Belgium,2018,NA
+Peru,1989,NA
+Peru,1990,NA
+Peru,1991,NA
+Peru,1992,NA
+Peru,1993,NA
+Peru,1994,NA
+Peru,1995,NA
+Peru,1996,NA
+Peru,1997,NA
+Peru,1998,NA
+Peru,1999,44
+Peru,2000,NA
+Peru,2001,NA
+Peru,2002,NA
+Peru,2003,NA
+Peru,2004,NA
+Peru,2005,NA
+Peru,2006,NA
+Peru,2007,NA
+Peru,2008,NA
+Peru,2009,NA
+Peru,2010,NA
+Peru,2011,NA
+Peru,2012,NA
+Peru,2013,NA
+Peru,2014,NA
+Peru,2015,7
+Peru,2016,NA
+Peru,2017,NA
+Peru,2018,NA
+Trinidad and Tobago,1989,NA
+Trinidad and Tobago,1990,NA
+Trinidad and Tobago,1991,NA
+Trinidad and Tobago,1992,NA
+Trinidad and Tobago,1993,NA
+Trinidad and Tobago,1994,NA
+Trinidad and Tobago,1995,1
+Trinidad and Tobago,1996,43
+Trinidad and Tobago,1997,NA
+Trinidad and Tobago,1998,NA
+Trinidad and Tobago,1999,NA
+Trinidad and Tobago,2000,NA
+Trinidad and Tobago,2001,NA
+Trinidad and Tobago,2002,NA
+Trinidad and Tobago,2003,NA
+Trinidad and Tobago,2004,3
+Trinidad and Tobago,2005,NA
+Trinidad and Tobago,2006,NA
+Trinidad and Tobago,2007,NA
+Trinidad and Tobago,2008,NA
+Trinidad and Tobago,2009,NA
+Trinidad and Tobago,2010,NA
+Trinidad and Tobago,2011,NA
+Trinidad and Tobago,2012,NA
+Trinidad and Tobago,2013,2
+Trinidad and Tobago,2014,1
+Trinidad and Tobago,2015,NA
+Trinidad and Tobago,2016,NA
+Trinidad and Tobago,2017,NA
+Trinidad and Tobago,2018,NA
+Mexico,1989,NA
+Mexico,1990,NA
+Mexico,1991,NA
+Mexico,1992,NA
+Mexico,1993,NA
+Mexico,1994,NA
+Mexico,1995,NA
+Mexico,1996,NA
+Mexico,1997,8
+Mexico,1998,36
+Mexico,1999,2
+Mexico,2000,1
+Mexico,2001,0
+Mexico,2002,1
+Mexico,2003,NA
+Mexico,2004,NA
+Mexico,2005,NA
+Mexico,2006,NA
+Mexico,2007,NA
+Mexico,2008,NA
+Mexico,2009,NA
+Mexico,2010,NA
+Mexico,2011,NA
+Mexico,2012,0
+Mexico,2013,1
+Mexico,2014,NA
+Mexico,2015,NA
+Mexico,2016,NA
+Mexico,2017,NA
+Mexico,2018,NA
+Greece,1989,NA
+Greece,1990,NA
+Greece,1991,NA
+Greece,1992,NA
+Greece,1993,NA
+Greece,1994,NA
+Greece,1995,NA
+Greece,1996,NA
+Greece,1997,NA
+Greece,1998,33
+Greece,1999,7
+Greece,2000,NA
+Greece,2001,NA
+Greece,2002,NA
+Greece,2003,NA
+Greece,2004,2
+Greece,2005,NA
+Greece,2006,NA
+Greece,2007,NA
+Greece,2008,NA
+Greece,2009,NA
+Greece,2010,NA
+Greece,2011,NA
+Greece,2012,7
+Greece,2013,NA
+Greece,2014,NA
+Greece,2015,NA
+Greece,2016,NA
+Greece,2017,NA
+Greece,2018,NA
+Republic of South Africa,1989,NA
+Republic of South Africa,1990,NA
+Republic of South Africa,1991,NA
+Republic of South Africa,1992,NA
+Republic of South Africa,1993,NA
+Republic of South Africa,1994,NA
+Republic of South Africa,1995,NA
+Republic of South Africa,1996,NA
+Republic of South Africa,1997,NA
+Republic of South Africa,1998,NA
+Republic of South Africa,1999,NA
+Republic of South Africa,2000,43
+Republic of South Africa,2001,NA
+Republic of South Africa,2002,5
+Republic of South Africa,2003,NA
+Republic of South Africa,2004,NA
+Republic of South Africa,2005,NA
+Republic of South Africa,2006,NA
+Republic of South Africa,2007,NA
+Republic of South Africa,2008,NA
+Republic of South Africa,2009,NA
+Republic of South Africa,2010,NA
+Republic of South Africa,2011,NA
+Republic of South Africa,2012,NA
+Republic of South Africa,2013,NA
+Republic of South Africa,2014,NA
+Republic of South Africa,2015,NA
+Republic of South Africa,2016,NA
+Republic of South Africa,2017,NA
+Republic of South Africa,2018,NA
+Hong Kong,1989,NA
+Hong Kong,1990,NA
+Hong Kong,1991,NA
+Hong Kong,1992,NA
+Hong Kong,1993,NA
+Hong Kong,1994,NA
+Hong Kong,1995,NA
+Hong Kong,1996,NA
+Hong Kong,1997,NA
+Hong Kong,1998,NA
+Hong Kong,1999,NA
+Hong Kong,2000,NA
+Hong Kong,2001,NA
+Hong Kong,2002,NA
+Hong Kong,2003,NA
+Hong Kong,2004,NA
+Hong Kong,2005,NA
+Hong Kong,2006,NA
+Hong Kong,2007,NA
+Hong Kong,2008,NA
+Hong Kong,2009,NA
+Hong Kong,2010,NA
+Hong Kong,2011,48
+Hong Kong,2012,NA
+Hong Kong,2013,NA
+Hong Kong,2014,NA
+Hong Kong,2015,NA
+Hong Kong,2016,NA
+Hong Kong,2017,NA
+Hong Kong,2018,NA
+Namibia,1989,NA
+Namibia,1990,NA
+Namibia,1991,NA
+Namibia,1992,NA
+Namibia,1993,NA
+Namibia,1994,NA
+Namibia,1995,NA
+Namibia,1996,NA
+Namibia,1997,40
+Namibia,1998,NA
+Namibia,1999,NA
+Namibia,2000,NA
+Namibia,2001,NA
+Namibia,2002,NA
+Namibia,2003,NA
+Namibia,2004,NA
+Namibia,2005,NA
+Namibia,2006,NA
+Namibia,2007,NA
+Namibia,2008,NA
+Namibia,2009,NA
+Namibia,2010,NA
+Namibia,2011,NA
+Namibia,2012,NA
+Namibia,2013,NA
+Namibia,2014,NA
+Namibia,2015,NA
+Namibia,2016,NA
+Namibia,2017,NA
+Namibia,2018,NA
+South Korea,1989,NA
+South Korea,1990,NA
+South Korea,1991,NA
+South Korea,1992,NA
+South Korea,1993,NA
+South Korea,1994,NA
+South Korea,1995,NA
+South Korea,1996,NA
+South Korea,1997,NA
+South Korea,1998,NA
+South Korea,1999,NA
+South Korea,2000,NA
+South Korea,2001,NA
+South Korea,2002,NA
+South Korea,2003,NA
+South Korea,2004,NA
+South Korea,2005,NA
+South Korea,2006,NA
+South Korea,2007,NA
+South Korea,2008,39
+South Korea,2009,NA
+South Korea,2010,NA
+South Korea,2011,NA
+South Korea,2012,NA
+South Korea,2013,NA
+South Korea,2014,NA
+South Korea,2015,NA
+South Korea,2016,NA
+South Korea,2017,NA
+South Korea,2018,NA
+Vietnam,1989,NA
+Vietnam,1990,NA
+Vietnam,1991,NA
+Vietnam,1992,NA
+Vietnam,1993,NA
+Vietnam,1994,NA
+Vietnam,1995,NA
+Vietnam,1996,NA
+Vietnam,1997,NA
+Vietnam,1998,NA
+Vietnam,1999,1
+Vietnam,2000,NA
+Vietnam,2001,NA
+Vietnam,2002,NA
+Vietnam,2003,NA
+Vietnam,2004,NA
+Vietnam,2005,NA
+Vietnam,2006,NA
+Vietnam,2007,NA
+Vietnam,2008,NA
+Vietnam,2009,NA
+Vietnam,2010,NA
+Vietnam,2011,NA
+Vietnam,2012,6
+Vietnam,2013,4
+Vietnam,2014,22
+Vietnam,2015,NA
+Vietnam,2016,NA
+Vietnam,2017,NA
+Vietnam,2018,NA
+Italy,1989,NA
+Italy,1990,NA
+Italy,1991,NA
+Italy,1992,NA
+Italy,1993,NA
+Italy,1994,NA
+Italy,1995,NA
+Italy,1996,NA
+Italy,1997,18
+Italy,1998,NA
+Italy,1999,NA
+Italy,2000,NA
+Italy,2001,3
+Italy,2002,NA
+Italy,2003,NA
+Italy,2004,NA
+Italy,2005,NA
+Italy,2006,NA
+Italy,2007,NA
+Italy,2008,NA
+Italy,2009,NA
+Italy,2010,NA
+Italy,2011,NA
+Italy,2012,NA
+Italy,2013,NA
+Italy,2014,NA
+Italy,2015,6
+Italy,2016,NA
+Italy,2017,NA
+Italy,2018,NA
+Brazil,1989,NA
+Brazil,1990,NA
+Brazil,1991,NA
+Brazil,1992,2
+Brazil,1993,4
+Brazil,1994,NA
+Brazil,1995,NA
+Brazil,1996,NA
+Brazil,1997,NA
+Brazil,1998,NA
+Brazil,1999,NA
+Brazil,2000,3
+Brazil,2001,3
+Brazil,2002,NA
+Brazil,2003,4
+Brazil,2004,NA
+Brazil,2005,2
+Brazil,2006,NA
+Brazil,2007,NA
+Brazil,2008,NA
+Brazil,2009,NA
+Brazil,2010,NA
+Brazil,2011,NA
+Brazil,2012,NA
+Brazil,2013,NA
+Brazil,2014,NA
+Brazil,2015,7
+Brazil,2016,NA
+Brazil,2017,NA
+Brazil,2018,NA
+Vatican City,1989,NA
+Vatican City,1990,NA
+Vatican City,1991,NA
+Vatican City,1992,NA
+Vatican City,1993,24
+Vatican City,1994,NA
+Vatican City,1995,NA
+Vatican City,1996,NA
+Vatican City,1997,NA
+Vatican City,1998,NA
+Vatican City,1999,NA
+Vatican City,2000,NA
+Vatican City,2001,NA
+Vatican City,2002,NA
+Vatican City,2003,NA
+Vatican City,2004,NA
+Vatican City,2005,NA
+Vatican City,2006,NA
+Vatican City,2007,NA
+Vatican City,2008,NA
+Vatican City,2009,NA
+Vatican City,2010,NA
+Vatican City,2011,NA
+Vatican City,2012,NA
+Vatican City,2013,NA
+Vatican City,2014,NA
+Vatican City,2015,NA
+Vatican City,2016,NA
+Vatican City,2017,NA
+Vatican City,2018,NA
+Singapore,1989,NA
+Singapore,1990,NA
+Singapore,1991,NA
+Singapore,1992,NA
+Singapore,1993,NA
+Singapore,1994,NA
+Singapore,1995,NA
+Singapore,1996,22
+Singapore,1997,NA
+Singapore,1998,NA
+Singapore,1999,NA
+Singapore,2000,NA
+Singapore,2001,NA
+Singapore,2002,NA
+Singapore,2003,NA
+Singapore,2004,NA
+Singapore,2005,NA
+Singapore,2006,NA
+Singapore,2007,NA
+Singapore,2008,NA
+Singapore,2009,NA
+Singapore,2010,NA
+Singapore,2011,NA
+Singapore,2012,NA
+Singapore,2013,NA
+Singapore,2014,NA
+Singapore,2015,NA
+Singapore,2016,NA
+Singapore,2017,NA
+Singapore,2018,NA
+Bermuda,1989,NA
+Bermuda,1990,15
+Bermuda,1991,NA
+Bermuda,1992,NA
+Bermuda,1993,NA
+Bermuda,1994,NA
+Bermuda,1995,NA
+Bermuda,1996,NA
+Bermuda,1997,NA
+Bermuda,1998,NA
+Bermuda,1999,NA
+Bermuda,2000,NA
+Bermuda,2001,NA
+Bermuda,2002,NA
+Bermuda,2003,NA
+Bermuda,2004,NA
+Bermuda,2005,NA
+Bermuda,2006,NA
+Bermuda,2007,NA
+Bermuda,2008,NA
+Bermuda,2009,NA
+Bermuda,2010,NA
+Bermuda,2011,NA
+Bermuda,2012,NA
+Bermuda,2013,NA
+Bermuda,2014,NA
+Bermuda,2015,NA
+Bermuda,2016,NA
+Bermuda,2017,NA
+Bermuda,2018,NA
+Finland,1989,NA
+Finland,1990,NA
+Finland,1991,1
+Finland,1992,NA
+Finland,1993,NA
+Finland,1994,NA
+Finland,1995,NA
+Finland,1996,NA
+Finland,1997,NA
+Finland,1998,NA
+Finland,1999,NA
+Finland,2000,NA
+Finland,2001,8
+Finland,2002,2
+Finland,2003,NA
+Finland,2004,NA
+Finland,2005,2
+Finland,2006,NA
+Finland,2007,NA
+Finland,2008,NA
+Finland,2009,NA
+Finland,2010,NA
+Finland,2011,NA
+Finland,2012,NA
+Finland,2013,NA
+Finland,2014,NA
+Finland,2015,NA
+Finland,2016,NA
+Finland,2017,NA
+Finland,2018,NA
+Nicaragua,1989,NA
+Nicaragua,1990,NA
+Nicaragua,1991,NA
+Nicaragua,1992,NA
+Nicaragua,1993,NA
+Nicaragua,1994,NA
+Nicaragua,1995,NA
+Nicaragua,1996,13
+Nicaragua,1997,NA
+Nicaragua,1998,NA
+Nicaragua,1999,NA
+Nicaragua,2000,NA
+Nicaragua,2001,NA
+Nicaragua,2002,NA
+Nicaragua,2003,NA
+Nicaragua,2004,NA
+Nicaragua,2005,NA
+Nicaragua,2006,NA
+Nicaragua,2007,NA
+Nicaragua,2008,0
+Nicaragua,2009,NA
+Nicaragua,2010,NA
+Nicaragua,2011,NA
+Nicaragua,2012,NA
+Nicaragua,2013,NA
+Nicaragua,2014,NA
+Nicaragua,2015,NA
+Nicaragua,2016,NA
+Nicaragua,2017,NA
+Nicaragua,2018,NA
+Spain,1989,NA
+Spain,1990,NA
+Spain,1991,NA
+Spain,1992,NA
+Spain,1993,NA
+Spain,1994,NA
+Spain,1995,NA
+Spain,1996,NA
+Spain,1997,NA
+Spain,1998,NA
+Spain,1999,NA
+Spain,2000,NA
+Spain,2001,NA
+Spain,2002,NA
+Spain,2003,9
+Spain,2004,NA
+Spain,2005,NA
+Spain,2006,NA
+Spain,2007,NA
+Spain,2008,NA
+Spain,2009,NA
+Spain,2010,NA
+Spain,2011,NA
+Spain,2012,NA
+Spain,2013,NA
+Spain,2014,NA
+Spain,2015,3
+Spain,2016,NA
+Spain,2017,1
+Spain,2018,NA
+Laos,1989,NA
+Laos,1990,NA
+Laos,1991,NA
+Laos,1992,NA
+Laos,1993,NA
+Laos,1994,NA
+Laos,1995,NA
+Laos,1996,NA
+Laos,1997,2
+Laos,1998,NA
+Laos,1999,NA
+Laos,2000,NA
+Laos,2001,NA
+Laos,2002,NA
+Laos,2003,NA
+Laos,2004,NA
+Laos,2005,NA
+Laos,2006,NA
+Laos,2007,NA
+Laos,2008,NA
+Laos,2009,NA
+Laos,2010,10
+Laos,2011,NA
+Laos,2012,NA
+Laos,2013,NA
+Laos,2014,NA
+Laos,2015,NA
+Laos,2016,NA
+Laos,2017,NA
+Laos,2018,NA
+Macao (Macau),1989,NA
+Macao (Macau),1990,3
+Macao (Macau),1991,NA
+Macao (Macau),1992,9
+Macao (Macau),1993,NA
+Macao (Macau),1994,NA
+Macao (Macau),1995,NA
+Macao (Macau),1996,NA
+Macao (Macau),1997,NA
+Macao (Macau),1998,NA
+Macao (Macau),1999,NA
+Macao (Macau),2000,NA
+Macao (Macau),2001,NA
+Macao (Macau),2002,NA
+Macao (Macau),2003,NA
+Macao (Macau),2004,NA
+Macao (Macau),2005,NA
+Macao (Macau),2006,NA
+Macao (Macau),2007,NA
+Macao (Macau),2008,NA
+Macao (Macau),2009,NA
+Macao (Macau),2010,NA
+Macao (Macau),2011,NA
+Macao (Macau),2012,NA
+Macao (Macau),2013,NA
+Macao (Macau),2014,NA
+Macao (Macau),2015,NA
+Macao (Macau),2016,NA
+Macao (Macau),2017,NA
+Macao (Macau),2018,NA
+Somalia,1989,NA
+Somalia,1990,11
+Somalia,1991,NA
+Somalia,1992,NA
+Somalia,1993,NA
+Somalia,1994,NA
+Somalia,1995,NA
+Somalia,1996,NA
+Somalia,1997,NA
+Somalia,1998,NA
+Somalia,1999,NA
+Somalia,2000,NA
+Somalia,2001,NA
+Somalia,2002,NA
+Somalia,2003,NA
+Somalia,2004,NA
+Somalia,2005,NA
+Somalia,2006,NA
+Somalia,2007,NA
+Somalia,2008,NA
+Somalia,2009,NA
+Somalia,2010,NA
+Somalia,2011,NA
+Somalia,2012,NA
+Somalia,2013,NA
+Somalia,2014,NA
+Somalia,2015,NA
+Somalia,2016,NA
+Somalia,2017,NA
+Somalia,2018,NA
+Guyana,1989,NA
+Guyana,1990,NA
+Guyana,1991,NA
+Guyana,1992,NA
+Guyana,1993,NA
+Guyana,1994,NA
+Guyana,1995,11
+Guyana,1996,NA
+Guyana,1997,NA
+Guyana,1998,NA
+Guyana,1999,NA
+Guyana,2000,NA
+Guyana,2001,NA
+Guyana,2002,NA
+Guyana,2003,NA
+Guyana,2004,NA
+Guyana,2005,NA
+Guyana,2006,NA
+Guyana,2007,NA
+Guyana,2008,NA
+Guyana,2009,NA
+Guyana,2010,NA
+Guyana,2011,NA
+Guyana,2012,NA
+Guyana,2013,NA
+Guyana,2014,NA
+Guyana,2015,NA
+Guyana,2016,NA
+Guyana,2017,NA
+Guyana,2018,NA
+Grenada,1989,NA
+Grenada,1990,NA
+Grenada,1991,NA
+Grenada,1992,NA
+Grenada,1993,NA
+Grenada,1994,NA
+Grenada,1995,NA
+Grenada,1996,NA
+Grenada,1997,4
+Grenada,1998,NA
+Grenada,1999,NA
+Grenada,2000,NA
+Grenada,2001,NA
+Grenada,2002,NA
+Grenada,2003,NA
+Grenada,2004,NA
+Grenada,2005,NA
+Grenada,2006,NA
+Grenada,2007,NA
+Grenada,2008,NA
+Grenada,2009,NA
+Grenada,2010,NA
+Grenada,2011,NA
+Grenada,2012,NA
+Grenada,2013,NA
+Grenada,2014,5
+Grenada,2015,NA
+Grenada,2016,NA
+Grenada,2017,NA
+Grenada,2018,NA
+Turkey,1989,NA
+Turkey,1990,NA
+Turkey,1991,NA
+Turkey,1992,NA
+Turkey,1993,NA
+Turkey,1994,NA
+Turkey,1995,NA
+Turkey,1996,NA
+Turkey,1997,NA
+Turkey,1998,NA
+Turkey,1999,NA
+Turkey,2000,NA
+Turkey,2001,NA
+Turkey,2002,NA
+Turkey,2003,NA
+Turkey,2004,NA
+Turkey,2005,NA
+Turkey,2006,NA
+Turkey,2007,NA
+Turkey,2008,NA
+Turkey,2009,NA
+Turkey,2010,NA
+Turkey,2011,NA
+Turkey,2012,NA
+Turkey,2013,NA
+Turkey,2014,NA
+Turkey,2015,NA
+Turkey,2016,NA
+Turkey,2017,9
+Turkey,2018,NA
+Cook Islands,1989,NA
+Cook Islands,1990,NA
+Cook Islands,1991,NA
+Cook Islands,1992,NA
+Cook Islands,1993,NA
+Cook Islands,1994,5
+Cook Islands,1995,NA
+Cook Islands,1996,NA
+Cook Islands,1997,NA
+Cook Islands,1998,NA
+Cook Islands,1999,NA
+Cook Islands,2000,3
+Cook Islands,2001,NA
+Cook Islands,2002,NA
+Cook Islands,2003,NA
+Cook Islands,2004,NA
+Cook Islands,2005,NA
+Cook Islands,2006,NA
+Cook Islands,2007,NA
+Cook Islands,2008,NA
+Cook Islands,2009,NA
+Cook Islands,2010,NA
+Cook Islands,2011,NA
+Cook Islands,2012,NA
+Cook Islands,2013,NA
+Cook Islands,2014,NA
+Cook Islands,2015,NA
+Cook Islands,2016,NA
+Cook Islands,2017,NA
+Cook Islands,2018,NA
+Guatemala,1989,NA
+Guatemala,1990,NA
+Guatemala,1991,NA
+Guatemala,1992,NA
+Guatemala,1993,NA
+Guatemala,1994,NA
+Guatemala,1995,NA
+Guatemala,1996,NA
+Guatemala,1997,3
+Guatemala,1998,2
+Guatemala,1999,NA
+Guatemala,2000,NA
+Guatemala,2001,NA
+Guatemala,2002,NA
+Guatemala,2003,NA
+Guatemala,2004,NA
+Guatemala,2005,NA
+Guatemala,2006,NA
+Guatemala,2007,NA
+Guatemala,2008,NA
+Guatemala,2009,2
+Guatemala,2010,NA
+Guatemala,2011,NA
+Guatemala,2012,NA
+Guatemala,2013,NA
+Guatemala,2014,NA
+Guatemala,2015,NA
+Guatemala,2016,NA
+Guatemala,2017,NA
+Guatemala,2018,NA
+Bulgaria,1989,NA
+Bulgaria,1990,NA
+Bulgaria,1991,NA
+Bulgaria,1992,NA
+Bulgaria,1993,NA
+Bulgaria,1994,NA
+Bulgaria,1995,NA
+Bulgaria,1996,NA
+Bulgaria,1997,NA
+Bulgaria,1998,NA
+Bulgaria,1999,NA
+Bulgaria,2000,NA
+Bulgaria,2001,7
+Bulgaria,2002,NA
+Bulgaria,2003,NA
+Bulgaria,2004,NA
+Bulgaria,2005,NA
+Bulgaria,2006,NA
+Bulgaria,2007,NA
+Bulgaria,2008,NA
+Bulgaria,2009,NA
+Bulgaria,2010,NA
+Bulgaria,2011,NA
+Bulgaria,2012,NA
+Bulgaria,2013,NA
+Bulgaria,2014,NA
+Bulgaria,2015,NA
+Bulgaria,2016,NA
+Bulgaria,2017,NA
+Bulgaria,2018,NA
+Panama,1989,NA
+Panama,1990,NA
+Panama,1991,NA
+Panama,1992,NA
+Panama,1993,NA
+Panama,1994,NA
+Panama,1995,NA
+Panama,1996,2
+Panama,1997,NA
+Panama,1998,NA
+Panama,1999,NA
+Panama,2000,NA
+Panama,2001,NA
+Panama,2002,NA
+Panama,2003,NA
+Panama,2004,NA
+Panama,2005,4
+Panama,2006,NA
+Panama,2007,NA
+Panama,2008,NA
+Panama,2009,NA
+Panama,2010,NA
+Panama,2011,NA
+Panama,2012,NA
+Panama,2013,NA
+Panama,2014,NA
+Panama,2015,NA
+Panama,2016,NA
+Panama,2017,NA
+Panama,2018,NA
+India,1989,NA
+India,1990,NA
+India,1991,NA
+India,1992,NA
+India,1993,NA
+India,1994,NA
+India,1995,NA
+India,1996,NA
+India,1997,NA
+India,1998,NA
+India,1999,6
+India,2000,NA
+India,2001,NA
+India,2002,NA
+India,2003,NA
+India,2004,NA
+India,2005,NA
+India,2006,NA
+India,2007,NA
+India,2008,NA
+India,2009,NA
+India,2010,NA
+India,2011,NA
+India,2012,NA
+India,2013,NA
+India,2014,NA
+India,2015,NA
+India,2016,NA
+India,2017,NA
+India,2018,NA
+Uganda,1989,NA
+Uganda,1990,NA
+Uganda,1991,NA
+Uganda,1992,NA
+Uganda,1993,NA
+Uganda,1994,NA
+Uganda,1995,NA
+Uganda,1996,NA
+Uganda,1997,NA
+Uganda,1998,NA
+Uganda,1999,NA
+Uganda,2000,NA
+Uganda,2001,NA
+Uganda,2002,4
+Uganda,2003,NA
+Uganda,2004,NA
+Uganda,2005,NA
+Uganda,2006,NA
+Uganda,2007,NA
+Uganda,2008,NA
+Uganda,2009,NA
+Uganda,2010,NA
+Uganda,2011,NA
+Uganda,2012,NA
+Uganda,2013,NA
+Uganda,2014,NA
+Uganda,2015,NA
+Uganda,2016,NA
+Uganda,2017,NA
+Uganda,2018,NA
+Oman,1989,NA
+Oman,1990,NA
+Oman,1991,NA
+Oman,1992,2
+Oman,1993,NA
+Oman,1994,NA
+Oman,1995,NA
+Oman,1996,2
+Oman,1997,NA
+Oman,1998,NA
+Oman,1999,NA
+Oman,2000,NA
+Oman,2001,NA
+Oman,2002,NA
+Oman,2003,NA
+Oman,2004,NA
+Oman,2005,NA
+Oman,2006,NA
+Oman,2007,NA
+Oman,2008,NA
+Oman,2009,NA
+Oman,2010,NA
+Oman,2011,NA
+Oman,2012,NA
+Oman,2013,NA
+Oman,2014,NA
+Oman,2015,NA
+Oman,2016,NA
+Oman,2017,NA
+Oman,2018,NA
+Indonesia,1989,NA
+Indonesia,1990,NA
+Indonesia,1991,NA
+Indonesia,1992,NA
+Indonesia,1993,NA
+Indonesia,1994,NA
+Indonesia,1995,2
+Indonesia,1996,NA
+Indonesia,1997,NA
+Indonesia,1998,NA
+Indonesia,1999,NA
+Indonesia,2000,NA
+Indonesia,2001,NA
+Indonesia,2002,NA
+Indonesia,2003,NA
+Indonesia,2004,NA
+Indonesia,2005,NA
+Indonesia,2006,NA
+Indonesia,2007,NA
+Indonesia,2008,NA
+Indonesia,2009,NA
+Indonesia,2010,NA
+Indonesia,2011,NA
+Indonesia,2012,NA
+Indonesia,2013,1
+Indonesia,2014,NA
+Indonesia,2015,NA
+Indonesia,2016,NA
+Indonesia,2017,NA
+Indonesia,2018,NA
+Honduras,1989,NA
+Honduras,1990,NA
+Honduras,1991,NA
+Honduras,1992,NA
+Honduras,1993,NA
+Honduras,1994,NA
+Honduras,1995,NA
+Honduras,1996,NA
+Honduras,1997,NA
+Honduras,1998,3
+Honduras,1999,NA
+Honduras,2000,NA
+Honduras,2001,NA
+Honduras,2002,NA
+Honduras,2003,NA
+Honduras,2004,NA
+Honduras,2005,NA
+Honduras,2006,NA
+Honduras,2007,NA
+Honduras,2008,NA
+Honduras,2009,NA
+Honduras,2010,NA
+Honduras,2011,NA
+Honduras,2012,NA
+Honduras,2013,NA
+Honduras,2014,NA
+Honduras,2015,NA
+Honduras,2016,NA
+Honduras,2017,NA
+Honduras,2018,NA
+Kenya,1989,NA
+Kenya,1990,NA
+Kenya,1991,NA
+Kenya,1992,NA
+Kenya,1993,NA
+Kenya,1994,NA
+Kenya,1995,NA
+Kenya,1996,NA
+Kenya,1997,NA
+Kenya,1998,NA
+Kenya,1999,NA
+Kenya,2000,NA
+Kenya,2001,NA
+Kenya,2002,NA
+Kenya,2003,NA
+Kenya,2004,NA
+Kenya,2005,3
+Kenya,2006,NA
+Kenya,2007,NA
+Kenya,2008,NA
+Kenya,2009,NA
+Kenya,2010,NA
+Kenya,2011,NA
+Kenya,2012,NA
+Kenya,2013,NA
+Kenya,2014,NA
+Kenya,2015,NA
+Kenya,2016,NA
+Kenya,2017,NA
+Kenya,2018,NA
+French Polynesia,1989,NA
+French Polynesia,1990,NA
+French Polynesia,1991,NA
+French Polynesia,1992,NA
+French Polynesia,1993,NA
+French Polynesia,1994,NA
+French Polynesia,1995,2
+French Polynesia,1996,NA
+French Polynesia,1997,NA
+French Polynesia,1998,NA
+French Polynesia,1999,NA
+French Polynesia,2000,NA
+French Polynesia,2001,NA
+French Polynesia,2002,NA
+French Polynesia,2003,NA
+French Polynesia,2004,NA
+French Polynesia,2005,NA
+French Polynesia,2006,NA
+French Polynesia,2007,NA
+French Polynesia,2008,NA
+French Polynesia,2009,NA
+French Polynesia,2010,NA
+French Polynesia,2011,NA
+French Polynesia,2012,NA
+French Polynesia,2013,NA
+French Polynesia,2014,NA
+French Polynesia,2015,NA
+French Polynesia,2016,NA
+French Polynesia,2017,NA
+French Polynesia,2018,NA
+Israel,1989,NA
+Israel,1990,NA
+Israel,1991,NA
+Israel,1992,NA
+Israel,1993,NA
+Israel,1994,NA
+Israel,1995,NA
+Israel,1996,NA
+Israel,1997,1
+Israel,1998,NA
+Israel,1999,NA
+Israel,2000,NA
+Israel,2001,NA
+Israel,2002,NA
+Israel,2003,NA
+Israel,2004,2
+Israel,2005,NA
+Israel,2006,NA
+Israel,2007,NA
+Israel,2008,NA
+Israel,2009,NA
+Israel,2010,NA
+Israel,2011,NA
+Israel,2012,NA
+Israel,2013,NA
+Israel,2014,NA
+Israel,2015,NA
+Israel,2016,NA
+Israel,2017,NA
+Israel,2018,NA
+St. Lucia,1989,NA
+St. Lucia,1990,NA
+St. Lucia,1991,NA
+St. Lucia,1992,NA
+St. Lucia,1993,NA
+St. Lucia,1994,2
+St. Lucia,1995,NA
+St. Lucia,1996,NA
+St. Lucia,1997,NA
+St. Lucia,1998,NA
+St. Lucia,1999,NA
+St. Lucia,2000,NA
+St. Lucia,2001,NA
+St. Lucia,2002,NA
+St. Lucia,2003,NA
+St. Lucia,2004,NA
+St. Lucia,2005,NA
+St. Lucia,2006,NA
+St. Lucia,2007,NA
+St. Lucia,2008,NA
+St. Lucia,2009,NA
+St. Lucia,2010,NA
+St. Lucia,2011,NA
+St. Lucia,2012,NA
+St. Lucia,2013,NA
+St. Lucia,2014,NA
+St. Lucia,2015,NA
+St. Lucia,2016,NA
+St. Lucia,2017,NA
+St. Lucia,2018,NA
+Maldives,1989,NA
+Maldives,1990,NA
+Maldives,1991,NA
+Maldives,1992,NA
+Maldives,1993,NA
+Maldives,1994,NA
+Maldives,1995,NA
+Maldives,1996,NA
+Maldives,1997,NA
+Maldives,1998,NA
+Maldives,1999,NA
+Maldives,2000,NA
+Maldives,2001,NA
+Maldives,2002,NA
+Maldives,2003,NA
+Maldives,2004,NA
+Maldives,2005,NA
+Maldives,2006,NA
+Maldives,2007,NA
+Maldives,2008,NA
+Maldives,2009,NA
+Maldives,2010,NA
+Maldives,2011,1
+Maldives,2012,NA
+Maldives,2013,NA
+Maldives,2014,NA
+Maldives,2015,NA
+Maldives,2016,NA
+Maldives,2017,NA
+Maldives,2018,NA
+Bolivia,1989,NA
+Bolivia,1990,NA
+Bolivia,1991,NA
+Bolivia,1992,NA
+Bolivia,1993,NA
+Bolivia,1994,NA
+Bolivia,1995,0
+Bolivia,1996,NA
+Bolivia,1997,NA
+Bolivia,1998,NA
+Bolivia,1999,NA
+Bolivia,2000,NA
+Bolivia,2001,NA
+Bolivia,2002,NA
+Bolivia,2003,NA
+Bolivia,2004,NA
+Bolivia,2005,NA
+Bolivia,2006,NA
+Bolivia,2007,NA
+Bolivia,2008,NA
+Bolivia,2009,NA
+Bolivia,2010,NA
+Bolivia,2011,NA
+Bolivia,2012,NA
+Bolivia,2013,NA
+Bolivia,2014,NA
+Bolivia,2015,NA
+Bolivia,2016,NA
+Bolivia,2017,NA
+Bolivia,2018,NA
+Switzerland,1989,NA
+Switzerland,1990,NA
+Switzerland,1991,NA
+Switzerland,1992,NA
+Switzerland,1993,NA
+Switzerland,1994,NA
+Switzerland,1995,NA
+Switzerland,1996,NA
+Switzerland,1997,NA
+Switzerland,1998,NA
+Switzerland,1999,NA
+Switzerland,2000,NA
+Switzerland,2001,NA
+Switzerland,2002,NA
+Switzerland,2003,NA
+Switzerland,2004,NA
+Switzerland,2005,NA
+Switzerland,2006,NA
+Switzerland,2007,NA
+Switzerland,2008,NA
+Switzerland,2009,NA
+Switzerland,2010,NA
+Switzerland,2011,NA
+Switzerland,2012,NA
+Switzerland,2013,NA
+Switzerland,2014,NA
+Switzerland,2015,NA
+Switzerland,2016,NA
+Switzerland,2017,0
+Switzerland,2018,NA

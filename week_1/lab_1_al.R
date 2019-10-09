@@ -41,7 +41,6 @@ summary(hp_data)
 head(hp_data)
 tail(hp_data)
 
-
 #---------------------------------------
 # dplyr::select() to create subsets of the df by columns
 #---------------------------------------

@@ -1,0 +1,7 @@
+---
+title: "Week 2 Notes"
+author: "Anthony Luna"
+date: "10/7/2019"
+output: html_document
+---
+

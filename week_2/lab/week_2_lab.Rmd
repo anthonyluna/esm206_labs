@@ -1,0 +1,134 @@
+---
+title: "Lab Week 2"
+author: "Anthony Luna"
+date: "10/7/2019"
+output: 
+  html_document:
+      theme: sandstone
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Markdown Formatting
+
+We can make a bulleted list
+
+ - lksjdflksjdf
+ - *woiwueroiewur*
+ - wknvx,**mnxcvs**
+ 
+ lksjdlfkjsdf^lksjdf^ lksjdflkjsdf~kkkk~
+ 
+https://www.ucsb.edu
+ 
+ or I can add a linked text [like dis...](https://www.ucsb.edu)
+ 
+ ![](materials/teddy_utah.jpg)
+```{r warnings = FALSE, message=FALSE}
+
+# Attach Necessary Packager
+
+library(tidyverse)
+library(tidyr)
+library(janitor)
+
+```
+ 
+### Read in some data
+
+```{r}
+wb_env <- read_csv("materials/wb_env.csv",skip=4)
+
+wb_env_long <- wb_env %>% 
+ pivot_longer( "1960":"2018",
+               names_to = "year",
+               values_to = "something") 
+```
+
+Now a bit more cleaning:
+
+```{r}
+wb_env_long_tidy <- wb_env_long %>% 
+  clean_names() %>% 
+  select(-x64) %>% 
+  mutate(year = as.numeric(year))
+```
+Now i'm going to do some iltering and subsetting to only loo at CO~2~ kTons 
+
+```{r}
+wb_co2 <-  wb_env_long_tidy %>% 
+  select(-country_code,-indicator_code) %>% 
+  filter(indicator_name == "CO2 emissions (kt)") %>% 
+  filter(between(year,2008,2018)) %>% 
+  group_by(country_name) %>% 
+  summarize(total = sum(something, na.rm = TRUE)) %>% 
+  arrange(-total)
+```
+Now to read in the country_list data
+
+```{r}
+country_list <- read_csv("materials/country_list.csv") %>% 
+  rename(country_name = country)
+
+wb_join <- wb_co2 %>% 
+  inner_join(country_list)
+
+wb_antijoin <- wb_co2 %>% 
+  anti_join(country_list)
+
+wb_antijoin2 <- country_list %>% 
+  anti_join(wb_co2)
+```
+
+Use the head() unction to only keep the top 20 CO~2~ emitters (total CO2 (kt)).
+
+```{r}
+
+co2_top20 <- wb_join %>% 
+  head(20)
+
+
+```
+
+Some ooptions for exploritory graphs
+
+```{r}
+ggplot(data = co2_top20, aes(x = country_name, y = total)) +
+  geom_col() +
+  coord_flip() 
+
+# Actually, lets convert to a factor with levels determined by the value in 'total' column so that these show up in a meaningful way
+
+ggplot(data = co2_top20, aes(x = fct_reorder(country_name, total),
+                             y = total)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    y = "CO2 Emissions (kTons)",
+    x = "Country"
+  )
+
+```
+
+And now, a slightly more customized graph
+
+```{r}
+ggplot(data = co2_top20, aes(x = fct_reorder(country_name, total),
+                             y = total)) +
+  geom_point(aes(color=total),
+             size = 3,
+             show.legend = FALSE) +
+  geom_col(width = .1)+
+  labs(
+    y = "CO2 Emissions (kTons)",
+    x = "Country"
+  ) +
+  theme_dark()+
+  scale_y_continuous(c(0,8e7), expand=c(0,0))+
+  coord_flip() 
+
+```
+
+And now, a slightly more customized graph
