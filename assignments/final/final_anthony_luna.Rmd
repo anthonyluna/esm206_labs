@@ -1,0 +1,421 @@
+---
+title: "ESM206 Final"
+author: "Anthony Luna"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE,warning = FALSE,fig.align = "center")
+```
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(kableExtra)
+library(scales)
+library(here)
+library(ggridges)
+library(ggbeeswarm)
+library(car)
+library(stringr)
+library(effsize)
+library(patchwork)
+```
+
+
+# Task 1. Predicting penguin mass
+
+## A. Visualization of penguin species, sex, flipper length, and body mass
+
+```{r}
+# Read in the penguin data
+
+penguin <- read_csv(here("data","lter penguin species.csv")) %>% 
+  mutate(short_species = word(species,1)) %>%  # Modify species name to shorten for viz
+  filter(sex %in% c("MALE","FEMALE")) %>% # remove bad sex values
+  mutate(sex = case_when(sex == "MALE"~"Male",T~"Female")) # Change values to proper case
+
+```
+
+```{r, fig.cap = "**Figure 1:** Penguin mass and flipper length ploted for each species. Points are also distinguished by sex using red and blue colors."}
+
+sp <- ggplot(data = penguin, aes(x=flipper_length_mm,y=body_mass_g)) +
+  geom_point(data = penguin[1:7], color="grey",alpha = .5)+
+  geom_point(aes(color=sex)) +
+  facet_wrap(nrow=1,~short_species)+
+  labs(title = "Visual comparison of flier length and penguin mass by species and sex",
+    subtitle = "",
+    caption = "",
+    x = "Flipper length (mm)",
+    y = "Penguin mass (g)",
+    col = "Sex") + 
+    theme_minimal() +  
+    # This centers our title and subtitle  
+    theme(plot.title = element_text(hjust= 0.5),
+          plot.subtitle = element_text(hjust= 0.5))
+  
+
+sp
+```
+ 
+## B. Observations of visualization
+ 
+ * All three species show a clustering of points based on sex, where the male penguins are generally larger by mass and somewhat longer by flipper length.
+ * The Gentoo cluster is apparently well distinguished from Adelie and Chinstrap penguins with regard to flipper length and mass.
+ * The Adelie and Chinstrap penguins are apparently less well distinguished from each other with regard to mass, but somewhat distinguished by flipper length.
+ 
+## C. Regression Models
+
+```{r}
+# Run a linear model for each of the permutations of predictor variables
+
+sex_spec_flip <- lm(body_mass_g~sex+short_species+flipper_length_mm,data=penguin)
+sex_spec      <- lm(body_mass_g~sex+short_species,data=penguin)
+sex_flip      <- lm(body_mass_g~sex+flipper_length_mm,data=penguin)
+spec_flip     <- lm(body_mass_g~short_species+flipper_length_mm,data=penguin)
+flip          <- lm(body_mass_g~flipper_length_mm,data=penguin)
+spec          <- lm(body_mass_g~short_species,data=penguin)
+sex           <- lm(body_mass_g~sex,data=penguin)
+
+# Create a data frame for each of these linear models using broom::glance
+
+all_test <- bind_rows(
+broom::glance(sex_spec_flip),  
+broom::glance(sex_spec) ,
+broom::glance(sex_flip),
+broom::glance(spec_flip),
+broom::glance(flip),
+broom::glance(spec),
+broom::glance(sex))
+
+#Add an identifier for each linear model
+
+all_test$relationship <- c("Sex:Species:Flipper",
+                           "Sex:Species",
+                           "Sex:Flipper",
+                           "Species:Flipper",
+                           "Flipper",
+                           "Species",
+                           "Sex")  
+
+
+all_test <- all_test[c(13,1,2,3,4,5,6,7,8,9,10,11,12)] %>% # Reorder the columns so the identifier is first
+  mutate(p.value = case_when(p.value<.00001~"<0.00001")) # Change p values which are less than .00001 to pretty text
+
+selected_model <- which(min(all_test$AIC)==all_test$AIC) # Index of the row which has the lowest AIC
+```
+
+```{r}
+kable(all_test,digits = 3,caption = "**Table 1:** Linear Regression statistics for all predictor variable permutations. Highlighted row has been selected as best model for weight prediction based off of lowest AIC value which indicates the best balance between complexity and fit of the model.") %>% 
+  kable_styling() %>% 
+  row_spec(selected_model,background = "#FFF84C") # Highlighted the row withthe lowest AIC Value
+```
+
+## D. Assumptions verification
+
+```{r, include=FALSE}
+plot(sex_spec_flip)
+```
+
+By using the `plot()` function, the 'Residual vs Fitted' plot demonstrates heteroscedasticity is satisfied and the 'Normal Q-Q' plot demonstrates that the residuals are normally distributed. 
+
+## E. Adjusted-R^2^
+
+For the selected model, the adjusted R^2^ is `r round(summary(sex_spec_flip)$adj.r.squared,digits=3)`, which means that `r percent(summary(sex_spec_flip)$adj.r.squared,accuracy=.1)` of the variance is in penguin weight is explained by species, sex, and flipper length.
+
+
+## F. Coefficient Interpretation
+
+* sexMale (coef = `r round(sex_spec_flip$coef["sexMale"],digits=3)`): Given all other predictor variables are fixed, if the sex is Male, the weight of the penguin will be `r round(sex_spec_flip$coef["sexMale"],digits=3)` g greater than if the penguin was female.
+* short_speciesChinstrap (coef = `r round(sex_spec_flip$coef["short_speciesChinstrap"],digits=3)`): Given all other predictor variables are fixed, if the species is Chinstrap, the weight of the penguin will be `r round(-1*sex_spec_flip$coef["short_speciesChinstrap"],digits=3)` g less than if the penguin was the reference species - Adelie.
+* short_speciesGentoo (coef = `r round(sex_spec_flip$coef["short_speciesGentoo"],digits=3)`): Given all other predictor variables are fixed, if the species is Gentoo, the weight of the penguin will be `r round(sex_spec_flip$coef["short_speciesGentoo"],digits=3)` g greater than if the penguin was the reference species - Adelie. 
+* flipper_length_mm (coef = `r round(sex_spec_flip$coef["flipper_length_mm"],digits=3)`): Given all other predictor variables are fixed,  the weight of the penguin will increase by `r round(sex_spec_flip$coef["flipper_length_mm"],digits=3)` g for every 1 mm increase in flipper length. 
+
+
+## G. Predictions using model
+
+```{r}
+# Build new values data frame
+new_values <- data.frame(sex = c("Female","Male","Male"),
+                         short_species = c("Chinstrap","Adelie","Gentoo"),
+                         flipper_length_mm = c(195,205,220))
+
+# Precdict the weights
+predicted_values <- predict(sex_spec_flip,newdata = new_values)
+
+# combine tables
+predicted_table <- data.frame(new_values,predicted_values)
+
+# print pretty table
+kable(predicted_table, col.names = c("Sex","Species","Flipper Length (mm)","Predicted Weights (g)"), digits = 2, caption = "**Table 2:** Predicted penguin weights based off sex, species, and flipper length using the selected model.") %>% 
+  kable_styling()
+```
+
+# Task 2. Smoking defects on baby birth weight
+
+
+## A. Table showing proportion of birth weights
+
+```{r}
+baby <- read_csv(here("data","nc birthweights.csv")) %>% 
+  drop_na()
+```
+
+```{r}
+baby_counts <- baby %>%
+  count(smoke, lowbw) %>% 
+  mutate("Birth weight"=case_when(lowbw==1~"Low",T~"Normal")) %>% # changing binary to words for output
+  mutate(smoke=case_when(smoke==1~"Smoker",T~"Non-smoker")) %>% # changing binary to words for output
+  pivot_wider(names_from = smoke,values_from = n) %>% # format data for proportion table
+  select(-lowbw)
+
+baby_table <- baby_counts %>% 
+  adorn_percentages(denominator = "col") %>% 
+  adorn_pct_formatting(digits = 0) %>% 
+  adorn_ns(position = "front")
+  
+```
+
+```{r}
+kable(baby_table, caption = "**Table 3:** Birth weight proportions for children of mothers who were smokers and non-smokers during pregnancy where low birth weight is considered to be less than 5 lb 8 oz. ") %>% 
+  kable_styling()
+```
+
+## B. Statistical analysis of proportions
+
+```{r}
+baby_chi <- baby_counts %>% select(-'Birth weight')
+
+baby_chi_results <- chisq.test(baby_chi)
+```
+
+There is not a significant difference between the proportion of low birth weight for children of mothers who are smokers or non-smokers (p value = `r round(baby_chi_results$p.value,digits = 3)`).
+
+## C. Discussion of survey methods
+
+The format of the question does not specify the amount that the mother smoked, only that they smoked at all during pregnancy. It would be more appropriate to use an ordinal variable to ask how much the mother smoked during pregnancy, e.g. "No smoking", "1-5 cigarettes", "6-10 cigarettes", "11-20 cigarettes", or "20+ cigarettes".
+
+# Task 3. Visualizing UCSB campus profiles
+
+## A. Goal
+The change in diversity of UCSB undergraduates and graduates was compared from 2008 to 2017. Data from 2018 was omitted due to incomplete counts. Undergraduate and graduate proportions over time were plotted separately, and student ethnicity were grouped by white and non-white with 'Unknown' ethnicity removed to avoid over representation in either group. 
+
+## B. Visualization
+
+```{r}
+student <- read_csv(here("data","ucsb campus profiles.csv")) %>% 
+  pivot_longer(cols = 3:13,values_to = "student_count",names_to = "year") %>% 
+  clean_names() %>% 
+  
+  # Cleaning value such that each row is an academic year in numeric form
+  mutate(year = as.numeric(word(year,1))) %>% 
+  
+  # Cleaning the student level name
+  mutate(student_level = word(student_level,1)) %>% 
+  
+  # Unknown ethnicity is filtered to avoid over representation in either group
+  filter(ethnicity_domestic_enrollment != "Unknown") %>% 
+  
+  # Filter data from 2018 since it is missing some count data
+  filter(year != 2018) %>% 
+  # Grouping ethnicities
+  mutate(ethnicity = case_when(ethnicity_domestic_enrollment != "White"~"Non-white",T~"White")) %>% 
+  group_by(student_level,year,ethnicity) %>% 
+  summarise(student_count = sum(student_count))
+
+```
+
+```{r, fig.cap="**Figure 2:** Total counts of students enrolled in graduate and undergraduate programs distinguished by ethnicity. Ethnicties were grouped by white and non-white. Unknown ethnicities were excluded to avoid over representation in either group."}
+ggplot(data=student,aes(x=year,y=student_count,fill=ethnicity)) +
+  geom_area()+
+  # Facet by student_level
+  facet_wrap(~student_level,scales = "free",ncol = 1)+
+  #add more years to the x axis
+  scale_x_continuous(breaks=seq(2008,2017,by=1))+
+  scale_fill_discrete(name = "Ethnicity")+
+  labs(title = "Enrollment over time in Undergraduate and Graduate programs",
+    x = "Year",
+    y = "Student Count") + 
+    theme_minimal() +  
+    # This centers our title and subtitle  
+    theme(plot.title = element_text(hjust= 0.5),
+          plot.subtitle = element_text(hjust= 0.5),
+          plot.caption = element_text(hjust = 0))
+```
+
+
+## C. Major takeaways
+
+```{r}
+# Key values for the takeaway
+# Undergrad and grad enrollment 2008
+u_2008 <- student %>% 
+  filter(year==2008&student_level=="Undergraduate") %>% 
+  select(student_count) %>% 
+  summarize(total=sum(student_count))
+
+g_2008 <- student %>% 
+  filter(year==2008&student_level=="Graduate") %>% 
+  select(student_count)%>% 
+  summarize(total=sum(student_count))
+
+# Undergrad and grad enrollment 2017
+u_2017 <- student %>% 
+  filter(year==2017&student_level=="Undergraduate") %>% 
+  select(student_count)%>% 
+  summarize(total=sum(student_count))
+
+g_2017 <- student %>% 
+  filter(year==2017&student_level=="Graduate") %>% 
+  select(student_count)%>% 
+  summarize(total=sum(student_count))
+
+# Table of proportions comparing white and non-white in undergrad programs from 2008 an 2017
+u_prop <- student %>% 
+  filter(year %in% c(2008,2017)) %>% 
+  filter(student_level=="Undergraduate") %>% 
+  pivot_wider(names_from = year,values_from = student_count) %>% 
+  select(-student_level) %>% 
+  adorn_percentages(denominator = "col") %>% 
+  adorn_pct_formatting()
+
+# Table of proportions comparing white and non-white in grad programs from 2008 an 2017
+g_prop <- student %>% 
+  filter(year %in% c(2008,2017)) %>% 
+  filter(student_level=="Graduate") %>% 
+  pivot_wider(names_from = year,values_from = student_count) %>% 
+  select(-student_level) %>% 
+  adorn_percentages(denominator = "col") %>% 
+  adorn_pct_formatting()
+
+```
+
+
+* Undergraduate enrollment overall has increased over this period from `r comma(u_2008$total)` in 2008 to `r comma(u_2017$total)` in 2017, whereas graduate enrollment has remained relatively constant at `r comma(g_2008$total)` in 2008 to `r comma(g_2017$total)`
+* Proportion of non-white students has increased in undergraduate programs from `r u_prop[1,3]` in 2008 to `r u_prop[1,4]` in 2017, whereas the proportion of non-white students has remained relatively unchanged in graduate programs at `r g_prop[1,3]` non-white in 2008 to `r g_prop[1,4]` in 2017.
+* Proportion of non-white students in graduate programs is generally much lower than the proportion of non-white students in undergraduate programs across all years.
+
+# Task 4. Purple urchins on the Santa Barbara coast
+
+## A. Urchin size summary statistics
+
+```{r}
+urchin <- read_csv(here("data","sbc lter urchins.csv")) %>% 
+  clean_names() %>% 
+  filter(treatment == "CONTROL") %>% # Filter for the Contol
+  filter(sp_code =="SPL") %>% # Filter for purple urchin based on sp_code
+    # Pretty print all site names
+  mutate(site = case_when(site=="AQUE"~"Arroyo Quemado",
+                          site=="MOHK"~"Mohawk",
+                          site=="CARP"~"Carpinteria",
+                          site=="IVEE"~"Isla Vista",
+                          site=="NAPL"~"Naples")) %>%
+  uncount(count) %>%  # uncount the data so data is in observations per row
+  select(site,size)
+```
+
+```{r}
+urchin_summary <- urchin %>% 
+  group_by(site) %>% 
+  summarise( mean = mean(size), # mean calculations
+             n=n(), # count of each site
+             sd = sd(size), #standard deviation
+             se = sd/sqrt(n)) %>%  #standard error
+ 
+  mutate(mean = round(mean,digits=2)) %>% 
+  mutate(sd=round(sd,digits = 2)) %>% 
+  mutate(se=round(se,digits = 2))
+```
+
+```{r}
+kable(urchin_summary,caption = "**Table 4:** Summary statistics of urchin size (cm) across 5 different locations in control treatments where kelp was not removed. ", col.names = c("Site","Mean (cm)", "Count","Standard Deviation (\u00B1 cm)","Standard Error (\u00B1 cm)"),escape = FALSE) %>% 
+  kable_styling()
+```
+
+
+## B. Exploratory data visualization
+
+```{r, fig.cap="**Figure 3:** Distribution of urchin length (cm) by site"}
+ggplot(data=urchin,aes(x=size,y=site,fill=site)) + 
+  geom_density_ridges()+
+  theme(legend.position = "none")
+
+
+```
+
+* Mohawk generally has a higher size distribution in comparison to the other sites.
+* This distribution plot points our that the precision of size measurements are 0.5 cm based on peaks being present at each 0.5 cm break.
+
+## C. Differences in size by site
+
+```{r, echo=FALSE,include=FALSE}
+# Levene's test for equal variance
+urchin_variance <- leveneTest(size~site,data=urchin)
+
+# the test holds so we accept the null hypothesis of equal variance. Therefore we can proceed with an ANOVA
+
+# QQ-plot to verify normality
+
+ggplot(data=urchin,aes(sample = size))+
+  geom_qq()+
+  geom_qq_line()+
+  facet_wrap(~site)
+
+# Normality isn't perfectly met, however ANOVA tends to be resilient to normal assumption 
+# discrepancies
+
+```
+
+```{r}
+urchin_anova <- aov(size~site,data=urchin)
+# method for creating easy inline from lab notes
+urchin_out <-  unlist(summary(urchin_anova))
+```
+
+```{r}
+# Calculating Tukey's HSD
+urchin_tukey <- TukeyHSD(urchin_anova)
+
+# Here each combination of sites cohen d is calculated for use later
+urchin_eff_nm <- abs(cohen.d(size~site,data=urchin %>% filter(site %in% c("Naples","Mohawk")))$estimate)
+urchin_eff_nc <- abs(cohen.d(size~site,data=urchin %>% filter(site %in% c("Naples","Carpinteria")))$estimate)
+urchin_eff_na <- abs(cohen.d(size~site,data=urchin %>% filter(site %in% c("Naples","Arroyo Quemado")))$estimate)
+urchin_eff_ni <- abs(cohen.d(size~site,data=urchin %>% filter(site %in% c("Naples","Isla Vista")))$estimate)
+urchin_eff_mc <- abs(cohen.d(size~site,data=urchin %>% filter(site %in% c("Mohawk","Carpinteria")))$estimate)
+urchin_eff_ma <- abs(cohen.d(size~site,data=urchin %>% filter(site %in% c("Mohawk","Arroyo Quemado")))$estimate)
+urchin_eff_mi <- abs(cohen.d(size~site,data=urchin %>% filter(site %in% c("Mohawk","Isla Vista")))$estimate)
+urchin_eff_ca <- abs(cohen.d(size~site,data=urchin %>% filter(site %in% c("Carpinteria","Arroyo Quemado")))$estimate)
+urchin_eff_ci <- abs(cohen.d(size~site,data=urchin %>% filter(site %in% c("Carpinteria","Isla Vista")))$estimate)
+urchin_eff_ai <- abs(cohen.d(size~site,data=urchin %>% filter(site %in% c("Arroyo Quemado","Isla Vista")))$estimate)
+
+# here the table of the effective sizes is made
+urchin_eff <- data.frame(site_comp= c("Naples-Mohawk",
+                                               "Naples-Carpinteria",                        
+                                               "Naples-Arroyo Quemado",                        
+                                               "Naples-Isla Vista",                        
+                                               "Mohawk-Carpinteria",                        
+                                               "Mohawk-Arroyo Quemado",                       
+                                               "Mohawk-Isla Vista",                        
+                                               "Carpinteria-Arroyo Quemado",                        
+                                               "Arroyo Quemado-Isla Vista"),
+                         cohend = c(urchin_eff_nm,
+                                               urchin_eff_nc,
+                                               urchin_eff_na,
+                                               urchin_eff_ni,
+                                               urchin_eff_mc,
+                                               urchin_eff_ma,
+                                               urchin_eff_mi,
+                                               urchin_eff_ca,
+                                               urchin_eff_ai)) %>% 
+  arrange(-cohend)
+  
+
+```
+
+Mean sizes differed significantly between all groups except between Isla Vista and Carpinteria (one-way ANOVA with post-hoc Tukey's HSD (F(`r urchin_out[1]`,`r number(urchin_out[2])`)=`r round(urchin_out[7],2)`, p < 0.001). The effect size of these differences are seen in the table below. As observed in part A, the size of urchins at Mohawk have a significant effective difference in size compared to the other sites, except for Arroyo Quemado where the difference is medium in effective size. The effective size is between small and negligible for the rest of the sites compared. 
+
+```{r}
+kable(urchin_eff,col.names = c("Sites Compared", "Cohen's d"), digits = 2, caption = "**Table 5:** Cohen's d for differences in mean urchin size between each site. All combinations of sites included except for Isla Vista-Carpinteria due to lack of statistical significance. Values greater than 0.8, 0.5, or 0.2 are considered to have large, medium, and small effective size differences respectively. Values less than 0.2 are considered to have negligible differences in mean size.") %>% 
+  kable_styling( full_width=F)
+```
+

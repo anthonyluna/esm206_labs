@@ -1,0 +1,144 @@
+---
+title: "Lab 3"
+author: "Anthony Luna"
+date: "10/14/2019"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message = FALSE)
+```
+### Part 1, Attach Packages
+
+```{r}
+library(tidyverse)
+library(here)
+library(janitor)
+library(ggridges)
+```
+
+
+### Part 2. Read in the  ouy data (plain text file)
+
+```{r}
+sb_buoy <- readr::read_table(here::here("raw_data","sb_buoy_2018.txt"),
+                             na = c("99","999","99.00","99.0","999.0")) %>% 
+  janitor::clean_names() %>% 
+  dplyr::slice(-1) %>% 
+  select(number_yy:gst, atmp)
+```
+
+### Part 3. Write sb_buoy to a csv file within the "intermediate_data subfolder
+
+```{r}
+write_csv(sb_buoy,here("intermediate_data","sb_buoy.csv"))
+```
+
+### Part 4. Exploring, and update 'mn' month column to an orered factor withnomth names
+
+First, check it out
+```{r, eval=TRUE}
+class(sb_buoy$mm)
+```
+
+Make class of mm numeric, pull the month names from month.abb
+```{r}
+sb_buoy_month <- sb_buoy %>% 
+  mutate(mm=as.numeric(mm)) %>% 
+  mutate(month_name = month.abb[mm])
+
+sb_bouy_fct <- sb_buoy_month %>% 
+  mutate(month_name = factor(month_name,levels = month.abb))
+
+
+```
+
+
+### Part 5. Exploration and purrr introduction
+
+```{r}
+ggplot(sb_bouy_fct, aes(x=month_name, y=atmp)) +
+  geom_jitter()
+```
+
+Now, we're going to say: for any comlumns that are stored as a character, I would like R to instead understand that they are numeric.
+
+
+```{r}
+sb_buoy_num <- sb_bouy_fct %>% 
+  modify_if(is.character,as.numeric)
+```
+
+
+
+```{r}
+ggplot(sb_buoy_num, aes(x=month_name, y=atmp)) +
+  geom_violin(aes(fill=month_name)) +
+  facet_wrap(~month_name)
+```
+
+OK, but I'd like to have those monthly temperatoures plotted separately in facets, but each o them overlayed on top of a population histogram
+
+```{r}
+ggplot(sb_buoy_num, aes(x=atmp))+
+  geom_histogram(data = transform(sb_buoy_num, month_name=NULL) , fill = "gray80",aes(y=..density..)) +
+  geom_histogram(aes(fill=month_name,y=..density..),alpha=.5) +
+  facet_wrap(~month_name) +
+  theme_light()
+```
+
+```{r}
+temp_graph <- ggplot(sb_buoy_num, aes(x=atmp,y=month_name)) +
+  geom_density_ridges(color = "purple",
+                      fill = "orange")+
+  scale_x_continuous(limits = c(5,25))+
+  scale_y_discrete(limits = rev(levels(sb_buoy_num$month_name))) 
+
+temp_graph
+
+
+ggsave(here("figures","temp_ridges.png"),
+  height = 6,
+  width = 6
+)
+
+```
+
+
+
+Now let's exlore some windspeed:
+
+```{r}
+ggplot(sb_buoy_num,aes(wdir,wspd))+
+  geom_hex()
+```
+
+Now let's see what this looks like if we use a polar coordinate system:
+
+```{r}
+ggplot(data = sb_buoy_num, aes(x=wdir, y=wspd)) +
+  geom_density2d(size = 0.2,
+                 aes(color=month_name),
+                 show.legend = FALSE) +
+  coord_polar() +
+  scale_x_continuous(breaks = c(0,90,180,270),
+                     labels = c("N","E","S","W"))+
+  facet_wrap(~month_name)+
+  theme_minimal()
+```
+
+### Part 6. dplyr::case_when() for if-else statements
+
+```{r}
+sb_buoy_season <- sb_buoy_num %>% 
+  mutate(
+    season = case_when(
+      month_name %in% c("Mar","Apr","May") ~ "Spring",
+      month_name %in% c("Jun","Jul","Aug") ~ "Summer",
+      month_name %in% c("Sep","Oct","Nov") ~ "Autumn",
+      month_name %in% c("Dec","Jan","Feb") ~ "Winter")
+  )
+```
+
+
+

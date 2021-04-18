@@ -1,0 +1,175 @@
+---
+title: 'Task 2. Mismanaged plastics: from rivers to oceans'
+author: "Anthony Luna"
+date: "10/15/2019"
+output: html_document
+link-citations: true
+references:
+- id: SCHMIDTinfo
+  title: Export of Plastic Debris by Rivers into the Sea
+  author: 
+  - family: Schmidt,
+    given:  Christian
+  - family: Krauth
+    given:  Tobias
+  - family: Wagner
+    given:  Stephan
+  issued:
+    year: 2017
+  volume: 51
+  number: 21
+  pages: 12246-12253
+  container-title: Environmental Science \& Technology
+  doi: 10.1021/acs.est.7b02368
+  URL: 'https://doi.org/10.1021/acs.est.7b02368'
+---
+
+```{r setup, include=FALSE}
+
+# Here we set the default such that no warnings or messages will appear in the final document.
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,fig.align = 'center')
+```
+### Introduction
+
+Globally, 10 rivers account for 88-95% of plastics introduced into the sea [@SCHMIDTinfo]. In this report we will be exploring more regional issues regarding plastic pollution in the seas. We will first look for seas enduring the highest impact of microplastic pollution. We will then focus on the Gulf of Mexico to determine rivers contributing the highest amount of macroplastic pollution.
+
+
+```{r}
+# Here we atrach our required packages
+
+library(tidyverse)
+library(janitor)
+
+# Here we load our data into plastic_rivers. We also clean the header names for convienience.
+
+plastic_rivers <- read_csv("plastic_rivers.csv") %>% 
+  clean_names()
+```
+
+
+### Part 1. Microplastics Load in Seas
+
+The following graphic provides an overview of seas carry the largest load of microplastics globally.
+
+```{r}
+microplastic_sea_load_t15_sum <- plastic_rivers %>% 
+
+  # Here we group by receiving_sea
+  
+  group_by(receiving_sea) %>% 
+  
+  # we summarise the data by taking the sum per group
+  
+  summarise(annual_total_microplastics = sum(microplastic_load_model_2_tons_y_1)) %>% 
+  
+  # Now we arrange in descending order.
+  
+  arrange(-annual_total_microplastics) %>% 
+  
+  # Finally, we take the top 15 elements in this table.
+  
+  head(15)
+
+# Given this data, we can now visualize the top 15 seas with regard to annual microplastics pollution.
+
+ggplot(microplastic_sea_load_t15_sum,aes(y=annual_total_microplastics, x=receiving_sea )) +
+  
+  # For this graph, we will use a simple bar chart.
+  
+  geom_col(fill="blue",size = 100) +
+  
+  # with this we include a label for each column which has the exact amount of microplastics in tons per year
+  
+  geom_label(aes(label=scales::comma(annual_total_microplastics)), nudge_y = 6500)+
+  
+  # Here we set the x - axis to sort by increasing pollution.
+  
+  scale_x_discrete(limits = rev(microplastic_sea_load_t15_sum$receiving_sea))+
+    
+  scale_y_continuous(labels = scales::comma, limits = c(0,100000))+
+  
+   labs(title = "Top 15 Seas by Microplastic Load",
+       caption = "Author: Anthony Luna",
+       x = "Sea",
+       y = expression(paste("Microplastic Load [tons ", y^{-1},"]"))) +
+  
+  theme_minimal()+
+  
+  # This centers our title and subtitle
+  
+  theme(plot.title = element_text(hjust= 0.5),
+      plot.subtitle = element_text(hjust= 0.5) )+
+  
+  # We also will flip the coordinates for aesthetics.
+  
+  coord_flip()
+
+```
+
+
+### Part 2. Plastic in the Gulf of Mexico
+
+We are now interested in looking at the Gulf of Mexico in particular. The following graphic shows the top 5 rivers sources for all types of plastic in the Gulf of Mexico.
+
+```{r}
+
+gulf_plastics_t5 <- plastic_rivers %>% 
+
+  # Here we group by receiving_sea
+  
+  filter(receiving_sea == 'Gulf of Mexico') %>% 
+  
+  group_by(river) %>% 
+  # we summarise the data by taking the sum per group
+  
+  summarise(annual_total_plastics = sum(macroplastic_load_tons_y_1 + microplastic_load_model_2_tons_y_1)) %>% 
+  
+  # Now we arrange in descending order.
+  
+  arrange(-annual_total_plastics) %>% 
+  
+  # We take the top 5 elements in this table.
+  
+  head(5) 
+  
+# Now that we have the data, we can create our plot
+
+ggplot(gulf_plastics_t5,aes(y=annual_total_plastics, x=river )) +
+
+  # We will use a simple bar chart again. This is good practice in terms of providing consistency for the reader  
+  
+  geom_col(fill = "blue") +
+  
+  # Here we add labels for clarity
+  
+  geom_label(aes(label=annual_total_plastics))+
+  
+  # here we are ordering the rivers from highest to lowest
+  
+  scale_x_discrete(limits = rev(gulf_plastics_t5$river))+
+  
+  # Now we flip the coordinates for aesthetics
+  
+  coord_flip()+
+  
+  # Here we add a title, caption, and appropriate x and y axes
+  
+  labs(title = "Top 5 Rivers sources of Plastic Waste in the Gulf of Mexico",
+       caption = "Author: Anthony Luna",
+       x = "Rivers",
+       y = expression(paste("Plastic Load [tons ", y^{-1},"]"))
+       )+
+  # We use the minimal theme
+  
+  theme_minimal()+
+  
+  # This centers our title and subtitle
+  
+  theme(plot.title = element_text(hjust= 0.5),
+      plot.subtitle = element_text(hjust= 0.5))
+  
+
+```
+
+### References

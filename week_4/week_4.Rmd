@@ -1,0 +1,37 @@
+---
+title: "Week 4 Lecture"
+author: "Anthony Luna"
+date: "10/21/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### Figure Captions and Table Captions
+
+ * Figure captions on bottom
+ * Table captions on Top
+ * Don't say "as seen in figure 3"
+ * indicated units and variables
+ * provide scope, context, units, N values, Confidence Intervals, and Variables
+ 
+ #### Data Types
+ 
+  * Nominal - Unordered Descriptions
+  * Ordinal - Ordered Descriptions
+  * Binary - Only 2 mutually exclusive outcomes
+  
+**How Does this relate to R?**
+
+ * Numeric, character, or factor. 
+ 
+ #### Numbers
+ 
+ THe more skewed, the more difference we will get between mean, median, and mode.
+ 
+ 
+
+
+ 

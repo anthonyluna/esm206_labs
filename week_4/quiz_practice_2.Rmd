@@ -1,0 +1,44 @@
+---
+title: 'Quiz Practice #2'
+author: "Anthony Luna"
+date: "10/21/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+
+```
+
+```{r}
+penguin_species <- read_csv("lter_penguin_species.csv")
+```
+
+```{r}
+penguin_subset <- penguin_species %>% 
+  select(species:sex,-region) %>% 
+  filter(sex == "FEMALE") %>% 
+  mutate(body_mass_kg = body_mass_g/1000)
+```
+
+```{r}
+ggplot(penguin_subset, aes(x = flipper_length_mm, y = body_mass_kg, color = species)) +
+  geom_point() +
+  labs(title = "",
+    subtitle = "",
+    caption = "",
+    x = "Flipper Length (mm)",
+    y = "Body Mass (kg)",
+    col = "") + 
+    theme_minimal() +  
+    # This centers our title and subtitle  
+    theme(plot.title = element_text(hjust= 0.5),
+          plot.subtitle = element_text(hjust= 0.5))
+```
+
+
+

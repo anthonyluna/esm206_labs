@@ -1,0 +1,313 @@
+---
+title: "Task 1. Pollution burden inequity in California"
+author: "Anthony Luna"
+date: "10/14/2019"
+output: html_document
+link-citations: true
+references:
+- id: CES3data
+  type: webpage
+  title: CalEnviroScreen 3.0
+  container-title:
+  URL: 'https://oehha.ca.gov/calenviroscreen/maps-data/download-data'
+  publisher: California Office of Environmental Health Hazard Assessment
+  issued: 
+    year: 2018
+    month: 6
+  accessed: 2019
+- id: SBAinfo
+  type: webpage
+  title: SB 535 Disadvantaged Communities 
+  container-title:
+  URL: 'https://oehha.ca.gov/calenviroscreen/sb535'
+  publisher: California Office of Environmental Health Hazard Assessment
+  issued: 
+    year: 2017
+    month: 6
+  accessed: 2019
+- id: CES3infoa
+  type: webpage
+  title: CalEnviroScreen 3.0 A Tool For Advancing Environmental Justice
+  container-title:
+  URL: 'hhttps://caleja.org/wp-content/uploads/2015/09/CES3.0-5.pdf'
+  publisher: California Environmental Justice Alliance
+  issued: 
+    year: 2015
+    month: 9
+  accessed: 2019
+- id: CENSUSdata
+  type: webpage
+  title: American Fact Finder
+  container-title:
+  URL: 'https://www.census.gov/data/datasets/2010/demo/popest/modified-race-data-2010.html'
+  publisher: United States Census Bureau 
+  issued: 
+    year: 2010
+    month: 4
+  accessed: 2019
+---
+
+
+```{r setup, include=FALSE }
+knitr::opts_chunk$set(echo = TRUE, fig.align = 'center')
+```
+
+
+### Introduction
+
+In 2012, California Senate Bill 535 was passed which "[directed] that 25 percent of the proceeds from the Greenhouse Gas Reduction Fund go to projects that provide a benefit to disadvantaged communities." [@SBAinfo] As a result, the California Office of Environmental Health Hazard Assessment (OEHHA) of the CalEPA developed CalEnviroScreen, a tool to identify disadvantaged communities which carry a pollution burden. This pollution burden is measured using a variety of air and water quality measures which can directly impact the health of the local populations.[@CES3infoa] In this report, we will be exploring this data to identify particularly disadvantaged counties, the relationship between race and health outcomes, and how poverty can identify further divisions at the county level.
+
+### Data Description
+
+The CalEnviroScreen 3.0 data set [@CES3data] contains an aggregatation of pollution burden and population characteristics data for each census tract in California. In order to supplement this data set with demographics information, we will also use 2010 US Census Data [@CENSUSdata]
+
+### Preparing the Data
+
+To begin, we must attach the required packages which include `` `r "tidyverse"` `` and `` `r "janitor"` `` 
+````{r}
+library(tidyverse)
+library(janitor)
+```
+
+Now we can load the raw pollution burden data and clean the names so they are in a standard format.
+
+```{r}
+ca_pollution_burden <- read_csv("ca_pollution_burden.csv") %>% 
+  clean_names("snake")
+```
+
+We also want to load the raw demographics data and clean its names. In order to incorporate the demographics data, we will need to join it to `` `r "ca_pollution_burden"` ``. This join will be simplified by renaming the variable `` `r "census_tract_number"` `` to match the census tract variable in `` `r "ca_pollution_burden"` `` which is given as `` `r "census_tract"` ``.
+
+```{r}
+ca_census_demographics <- read_csv("ca_census_demographics_2010.csv") %>% 
+  clean_names("snake") %>% 
+  rename(census_tract = census_tract_number)
+```
+
+Finally, we can join `` `r "ca_census_demographics"` `` with `` `r "ca_pollution_burden"` ``on `` `r "census_tract"` ``.
+
+```{r}
+ca_demographics_burden <- full_join(ca_census_demographics,
+                                    ca_pollution_burden,
+                                    by = "census_tract") %>% 
+  # We filter any censustracts with NA values for ces_3_0_score to clean up subsequent analyses since this is our metric of interest.
+  filter(!is.na(ces_3_0_score))
+```
+
+Now that our data is joined together, we can begin to explore and visualize.
+
+### Data Exploration
+
+#### Part 1: Ten Lowest ranking counties by CES 3.0 score
+
+We are interested in identifying ten counties with the highest burden scores. To do this, we will look for the average CES 3.0 score on a per county basis.
+
+To do this, We will first calculate the mean for all counties in the data set and sort in descending order.
+```{r}
+ca_demographics_burden_all <- ca_demographics_burden %>% 
+  
+  # Here we define our grouping
+  
+  group_by(california_county) %>% 
+  
+  # Here we calculate our mean CES Scores by california_county, making sure to 
+  # remove any NA values
+
+  summarise(ces_mean=mean(ces_3_0_score,na.rm = TRUE)) %>% 
+  
+  # Finally we sort the table in decending order
+  
+  arrange(ces_mean)
+```
+
+After this, we can create our bottom ten by taking the last ten records of the resulting data set.
+
+```{r}
+ca_demographics_burden_b10 <- ca_demographics_burden_all%>% 
+  
+  # Here we select the last ten records of the table
+  
+  tail(10)
+```
+
+Now lets visualize this information using a combination of the county mean and score of each census tract. This will provide deeper context into the nature of the burden in each county.
+
+First we will use the field `` `r "california_county"` `` from `` `r "ca_demographics_burden"` `` to filter out the counties which are not in the bottom ten.
+
+```{r}
+ca_demographics_burden_b10_tract <- ca_demographics_burden %>% 
+  filter(california_county %in% ca_demographics_burden_b10$california_county)
+```
+
+To provide the most context, we use a jitter plot with each point representing a census tract, along with a mean for the county.
+
+```{r}
+ggplot(ca_demographics_burden_b10_tract, aes(x = california_county , y = ces_3_0_score))+
+  
+  # By using a Jitter plot, we can see the density of each county with regard to the number of 
+  # census tracts. We can also see the distribution of these tracts within the county.
+  
+  geom_jitter(aes(color=california_county),width = 0.25, alpha = .3)+
+  
+  # Here we define our contextual mean for each county with an opaque bar graph
+  
+  geom_bar(data=ca_demographics_burden_b10, aes(y=ces_mean), stat = "identity", alpha = .5)+
+  
+  
+  # Here we order the x axis (california_county) from highest to lowest score
+  
+  scale_x_discrete(limits=ca_demographics_burden_b10$california_county) +
+ 
+  # Here we modify our title, subtitle, caption, xy-axis, and legend title
+  
+  labs(title = "Ten counties with the highest CES 3.0 Scores",
+       subtitle =   "Based on CalEnviroScreen 3.0 (2018) and Census data (2010) ",
+       caption = "Author: Anthony Luna",
+       x = "County",
+       y = "CES Score",
+       col = "County")+
+  
+  theme_minimal()+
+  
+  # This is used to center the title and subtitle
+  
+  theme(plot.title = element_text(hjust= 0.5),
+      plot.subtitle = element_text(hjust= 0.5)) +
+  
+  # Finally, for clarity in visualization we flip the coordinates
+  
+  coord_flip()
+```
+
+From this graph, we can see that most counties have a lot of variance by census tract. We will explore this variance further in Part 3 of this report, however we will first explore the population characteristics of tracts throughout California.
+
+#### Part 2: Asthma ER admissions as it relates to Race 
+
+For this section we will look at the rate of asthma as it relates to the estimated percentage of white population in each census tract. Using `` `r "ca_demographics_burden"` `` we can look at all of the census tracts and their rates of asthma. To visualize this relationship, we use `` `r "white_percent"` `` to define a new field `` `r "white_half"` `` which splits the census tracts into communities which are more than or less than 50% white. 
+
+```{r }
+ca_demographics_burden_white_half <- ca_demographics_burden %>% 
+  
+  # Here we add the column white_half
+  
+  mutate(white_half = case_when(
+    between(white_percent, 0    , 50)  ~ "50% - 0% White",
+    between(white_percent, 50.01, 100) ~ "100% - 50% White"
+  )) %>%
+  
+  # Here we designate this field as a factor
+  
+  mutate(white_half = factor(white_half,
+                             levels =c("100% - 50% White",
+                                       "50% - 0% White"))) %>% 
+  
+  # Finally, we filter our any values which return NA. These rows do not have a reported
+  # value for white_percent
+  
+  filter(!is.na(white_half))
+```
+
+Now we can visualize this relationship by comparing the number tracts with varying asthma percentiles as it relates to the percent of white population.
+
+```{r }
+# Here we are using the data set ca_demographics_burden_white_half with asthma_pctl
+# as the variable. Only one variable is required since we are using a histogram
+# for this visualization.
+
+ggplot(ca_demographics_burden_white_half, aes(x=asthma_pctl)) +
+
+  geom_histogram()+
+  
+  # Here we define our labels, title, and caption.
+  
+  labs(title = "Asthma ER visits percentile in relation to White Population",
+       subtitle =   "Based on CalEnviroScreen 3.0 (2018) and Census data (2010) ",
+       caption = "Author: Anthony Luna",
+       y = "Count of Tracts",
+       x = "Asthma Percentile") +
+  
+  theme_minimal()+
+  
+  # This customizes the title and subtitle elements so they are centered
+  
+  theme(plot.title = element_text(hjust= 0.5),
+      plot.subtitle = element_text(hjust= 0.5)) +
+  
+  # Finally, we split the graph based on the white_half variable as a factor
+  
+  facet_wrap(~white_half)
+ 
+```
+
+From this visualization, we can see a clear difference in the distribution of high percentile asthma census tracts. Communities with less than 50% whites have a much higher rate of asthma ER admissions, where as communities with more than 50% whites have a much lower rate of the same admissions.
+
+#### Part 3: Total Pollution burden by White percent population
+
+Now that we have seen how a white population can effect the rates of asthma, we can use a similar method to explore the counties with the worst pollution burden as described by the CES 3.0 Score. For this we will filter `` `r "ca_demographics_burden_white_half"` `` for the counties with the highest CES scores, and create a new factor which splits the tracts by poverty percentile. This split will be such that we have two factors, one which has all tracts in the top 50 percentile of poverty, and one which has all tracts in the bottom 50 percentile of poverty.
+
+```{r }
+ca_demographics_burden_poverty_half_b10 <- ca_demographics_burden_white_half %>% 
+  
+  # We use ca_demographics_burden_b10$california_county as a filter on this data set since we are only interested in the worst counties
+  
+  filter(california_county %in% ca_demographics_burden_b10$california_county) %>% 
+  
+  # Here we create a new column poverty_half to split the census tracts into the upper and lower percentiles of poverty
+  
+  mutate(poverty_half = case_when(
+    between(poverty_pctl, 0    , 50)  ~ "50 - 0 Poverty Percentile",
+    between(poverty_pctl, 50.01, 100) ~ "100 - 50 Poverty Percentile"
+  )) %>%
+  
+  # Now we use the poverty_half column as a factor for subsequent visualizations
+  mutate(poverty_half = factor(poverty_half,
+                                 levels =c("50 - 0 Poverty Percentile","100 - 50 Poverty Percentile"))) %>% 
+  
+  # finally, we filter our census tracts which do not have a poverty percentile in the data.
+  
+  filter(!is.na(poverty_half))
+
+ggplot(ca_demographics_burden_poverty_half_b10, aes(x = california_county , y = ces_3_0_score))+
+  
+  # Again a jitter plot is used to provide better context and interpretation of the data.
+  
+  geom_jitter(aes(color=california_county),width = 0.25, alpha = .3)+
+  
+  # As in Part 1, we use the mean CES score as a reference mean for the jitter plot
+  
+  geom_bar(data=ca_demographics_burden_b10, aes(y=ces_mean), stat = "identity",alpha = .5)+
+  
+  # The x axis is sorted in descending order or  CES Mean
+  
+  scale_x_discrete(limits=ca_demographics_burden_b10$california_county) +
+  
+  # Here we create our title, subtitle, caption, xy-axis, and legend
+  
+  labs(title = "Ten counties with highest CES 3.0 Scores (Poverty as factor)",
+       subtitle =   "Based on CalEnviroScreen 3.0 (2018) and Census data (2010) ",
+       caption = "Author: Anthony Luna",
+       x = "County",
+       y = "CES Score",
+       col = "County")+
+  
+  theme_minimal()+
+  
+  # This centers our title and subtitle
+  
+  theme(plot.title = element_text(hjust= 0.5),
+      plot.subtitle = element_text(hjust= 0.5)) +
+  
+  # Here we split our graph based on our factor poverty_half
+  
+  facet_wrap(~poverty_half)+
+  
+  # Finally for visual clarity, we flip the coordinates
+  
+  coord_flip()
+```
+
+Looking at the distribution of points in relation to the mean for the county, we can see that the census tracts in the lower poverty percentile are skewed to below the mean. Similarly, there is a skew towards higher scores in tracts which have a higher poverty ranking. There are still many of this group however who are below the mean. These could be communities to study further to understand actions taken by these communities to improve their local environments despite being economically disadvantaged. 
+
+It should be noted that in the methodology of the CES score calculation, poverty is used as a multiplier.[@CES3infoa] Despite this, it is one of eight charateristics used. More investigation into the methodlologies and further analysis would be required for this analysis to be useful with regard to learning from successful, yet disadvantaged communities.
+
+### References
